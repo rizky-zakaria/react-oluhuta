@@ -26,7 +26,7 @@ function Login() {
     //set state isLoading to "true"
     setLoading(true);
 
-    await Api.post("/api/admin/login", {
+    await Api.post("/api/client/login", {
       email: email,
       password: password
     })
@@ -46,7 +46,7 @@ function Login() {
 
         Cookies.set("token", response.data.token);
 
-        navigate("/admin/dashboard");
+        navigate("/");
       })
       .catch((error) => {
         //set state isLoading to "false"
@@ -59,7 +59,7 @@ function Login() {
 
   if (Cookies.get("token")) {
     //redirect dashboard page
-    return navigate("/admin/dashboard");
+    return navigate("/");
   }
 
   return (

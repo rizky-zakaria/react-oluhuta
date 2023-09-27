@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 function privateRoutes({ children }) {
     const token = Cookies.get('token');
     if (!token) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/user/login" replace />;
     }
 
     return children;

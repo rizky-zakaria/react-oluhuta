@@ -32,14 +32,7 @@ function WebHeader() {
   //token
   const token = Cookies.get("token");
 
-  //function "fetchDataCategories"
-  const fetchDataCategories = async () => {
-    //fetching Rest API "categories"
-    await Api.get("/api/web/categories").then((response) => {
-      //set data to state
-      setCategories(response.data.data);
-    });
-  };
+  
 
   //function "fetchDataUser"
   const fetchDataUser = async () => {
@@ -57,8 +50,6 @@ function WebHeader() {
 
   //hook
   useEffect(() => {
-    //call function "fetchDataCategories"
-    fetchDataCategories();
 
     //if token already exists
     if (token) {
@@ -89,7 +80,7 @@ function WebHeader() {
         <Container>
           <Navbar.Brand as={Link} to="/" className="fw-bold text-white">
             {/* <i className="fa fa-map-marked-alt"></i>  */}
-            <img src="logo/logo.png" alt="" />
+            <img src="/logo/logo.png" alt="" />
             Oluhuta Journey
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -124,9 +115,20 @@ function WebHeader() {
                   as={Link}
                   to="/user/login"
                   className="fw-bold text-white"
-                >
-                  <i className="fa fa-globe-asia"></i> Login
+                >SIGN UP
                 </Nav.Link>
+                
+              )}
+              {token ? (
+                ''
+              ) : (
+                <Nav.Link
+                  as={Link}
+                  to="/user/login"
+                  className="fw-bold text-white"
+                >LOGIN
+                </Nav.Link>
+                
               )}
             </Nav>
           </Navbar.Collapse>
