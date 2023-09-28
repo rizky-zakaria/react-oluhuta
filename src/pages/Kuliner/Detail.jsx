@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
+import "../../assets/css/text-justify.css";
 
 function DetailKuliner() {
   document.title = "Oluhuta Jorney";
@@ -66,6 +67,7 @@ function DetailKuliner() {
             </Col>
           </Row>
         </div>
+        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

@@ -8,14 +8,32 @@ import LayoutWeb from "../../../layouts/Web";
 import { useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../../../components/utilities/Footer";
+import "../../../assets/css/text-justify.css";
+import Api from "../../../api";
+import Cookies from "js-cookie";
 
 function Home() {
   document.title =
     "TRAVEL GIS - Website Wisata Berbasis GIS (Geographic Information System)";
 
   const navigate = useNavigate();
-  const [categories, setCategories] = useState([]);
-  const [keyword, setKeyword] = useState("");
+  const [beritas, setBeritas] = useState([]);
+
+  const token = Cookies.get("token");
+
+  const fetchData = async () => {
+    await Api.get("/api/client/berita", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setBeritas(response.data.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const topHome = {
     backgroundImage: 'url("/assets/img/bg-home.png")',
@@ -26,19 +44,10 @@ function Home() {
     height: "500px",
   };
 
-  // const introduction = {
-  //   backgroundImage: 'url("/assets/img/bg-home.png")',
-  //   backgroundSize: "cover",
-  //   backgroundRepeat: "no-repeat",
-  //   backgroundPosition: "center",
-  //   width: "100%",
-  //   height: "500px",
-  // };
-
   const cardHeader = {
     marginTop: "150px",
     width: "70%",
-    // opacity: "50%"
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   };
 
   return (
@@ -55,7 +64,7 @@ function Home() {
                         <Col xs={4} md={4} lg={4} sm={4}>
                           <a href="/user/geodiversity">
                             <img
-                              src="assets/img/geo.png"
+                              src="assets/img/geo.svg"
                               alt=""
                               width={"85px"}
                               className="img-fluid"
@@ -65,7 +74,7 @@ function Home() {
                         <Col xs={4} md={4} lg={4} sm={4}>
                           <a href="/user/culturdiversity">
                             <img
-                              src="assets/img/cultur.png"
+                              src="assets/img/cultur.svg"
                               alt=""
                               width={"100px"}
                               className="img-fluid"
@@ -75,7 +84,7 @@ function Home() {
                         <Col xs={4} md={4} lg={4} sm={4}>
                           <a href="/user/biodiversity">
                             <img
-                              src="assets/img/biodeversity.png"
+                              src="assets/img/biodeversity.svg"
                               alt=""
                               width={"85px"}
                               className="img-fluid"
@@ -142,48 +151,24 @@ function Home() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={4} lg={4} md={4} sm={4}>
-                    <div className="card">
-                      <img
-                        src="assets/img/bg-home.png"
-                        alt=""
-                        className="card-img-top"
-                      />
-                      <div class="card-body">
-                        <strong class="card-title d-flex justify-content-start">
-                          Card title
-                        </strong>
+                  {beritas.map((berita, index) => (
+                    <Col xs={4} lg={4} md={4} sm={4} key={index}>
+                      <div className="card">
+                        <img
+                          src={
+                            import.meta.env.VITE_APP_BASEURL + "/" + berita.path
+                          }
+                          alt=""
+                          className="card-img-top"
+                        />
+                        <div className="card-body">
+                          <strong className="card-title d-flex justify-content-start">
+                            {berita.judul}
+                          </strong>
+                        </div>
                       </div>
-                    </div>
-                  </Col>
-                  <Col xs={4} lg={4} md={4} sm={4}>
-                    <div className="card">
-                      <img
-                        src="assets/img/bg-home.png"
-                        alt=""
-                        className="card-img-top"
-                      />
-                      <div class="card-body">
-                        <strong class="card-title d-flex justify-content-start">
-                          Card title
-                        </strong>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs={4} lg={4} md={4} sm={4}>
-                    <div className="card">
-                      <img
-                        src="assets/img/bg-home.png"
-                        alt=""
-                        className="card-img-top"
-                      />
-                      <div class="card-body">
-                        <strong class="card-title d-flex justify-content-start">
-                          Card title
-                        </strong>
-                      </div>
-                    </div>
-                  </Col>
+                    </Col>
+                  ))}
                 </Row>
               </center>
             </Col>

@@ -3,66 +3,82 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
+import "../../assets/css/text-justify.css";
+import Api from "../../api";
+import Cookies from "js-cookie";
 
 function DetailCulturdiversity() {
   document.title = "Oluhuta Jorney";
+  let { id } = useParams();
+  const [culturdiversitys, setCulturdiversitys] = useState([]);
+  const [culturdiversity, setCulturdiversity] = useState([]);
 
   const navigate = useNavigate();
-   let { id } = useParams();
+  const token = Cookies.get("token");
+
+  const fetchData = async () => {
+    await Api.get("/api/client/culturdiversity", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setCulturdiversitys(response.data.data);
+    });
+  };
+
+  const fetchDataDetail = async () => {
+    await Api.get("/api/client/culturdiversity/" + id, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setCulturdiversity(response.data.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+    fetchDataDetail();
+  }, []);
   return (
     <React.Fragment>
       <LayoutWeb>
         <div className="container mt-100">
           <Row>
-            <Col xs={12} lg={8} sm={12} md={8}>
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    src="/assets/img/bg-home.png"
-                    className="card-img-top"
-                    alt=""
-                  />
-                  <h5>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, necessitatibus!
-                  </h5>
-                  <p className="card-text mt-25">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus sed mollitia possimus quisquam. Harum maxime delectus eos qui. Incidunt aut rem delectus dignissimos. Saepe ex dolorem distinctio magnam quae veniam accusamus, vero eaque error debitis corrupti ducimus aliquid et, suscipit aut non eos, possimus velit architecto inventore quia? Ipsam labore sint reprehenderit iure provident ea quas qui error incidunt, quos maiores ad ex deserunt voluptatibus dolore, magnam temporibus debitis maxime minus itaque, nisi nam. Veniam nemo amet velit animi labore praesentium vitae possimus neque impedit dolore incidunt cum voluptate reiciendis sit, esse sapiente rem quae odio maiores suscipit error? Nam accusamus ratione ullam sapiente harum, dicta suscipit maiores porro provident modi aperiam obcaecati explicabo. Quas eaque omnis corporis tempore ipsum.
-                  </p>
+            {culturdiversitys.map((cul, index) => (
+              <Col xs={12} lg={8} sm={12} md={8} key={index}>
+                <div className="card">
+                  <div className="card-body">
+                    <img
+                      src={import.meta.env.VITE_APP_BASEURL + "/" + cul.path}
+                      className="card-img-top"
+                      alt=""
+                    />
+                    <h5>{cul.judul}</h5>
+                    <p className="card-text mt-25">{cul.isi}</p>
+                  </div>
                 </div>
-              </div>
-            </Col>
+              </Col>
+            ))}
             <Col xs={12} lg={4} sm={12} md={4}>
-              <div className="card mb-3">
-                <div className="card-body">
-                  <img
-                    src="/assets/img/bg-home.png"
-                    className="card-img-top"
-                    alt=""
-                  />
-                  <a href="">
-                  <h5>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  </h5>
-                  </a>
+              {culturdiversitys.map((cul, index) => (
+                <div className="card mb-3" key={index}>
+                  <div className="card-body">
+                    <img
+                      src={import.meta.env.VITE_APP_BASEURL + "/" + cul.path}
+                      className="card-img-top"
+                      alt=""
+                    />
+                    <a href="">
+                      <h5>{cul.judul}</h5>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    src="/assets/img/bg-home.png"
-                    className="card-img-top"
-                    alt=""
-                  />
-                  <a href="">
-                  <h5>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  </h5>
-                  </a>
-                </div>
-              </div>
+              ))}
             </Col>
           </Row>
         </div>
+        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

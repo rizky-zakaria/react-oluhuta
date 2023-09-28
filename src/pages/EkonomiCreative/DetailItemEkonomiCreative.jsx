@@ -3,12 +3,55 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
+import "../../assets/css/text-justify.css";
+import toast from "react-hot-toast";
+import Api from "../../api";
+import Cookies from "js-cookie";
 
 function DetailItemEkonomiCreative() {
   document.title = "Oluhuta Jorney";
 
   const navigate = useNavigate();
+  const [qty, setQty] = useState("");
+  const token = Cookies.get("token");
   let { id } = useParams();
+  const [validation, setValidation] = useState({});
+
+  const storeCategory = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("qty", qty);
+    formData.append("id", id);
+    console.log(formData);
+    const response = await Api.post(
+      "/api/client/ekonomi-kreatif/payment",
+      formData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "content-type": "application/json",
+        },
+      }
+    )
+      .then(() => {
+        toast.success("Data Saved Successfully!", {
+          duration: 4000,
+          position: "top-right",
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
+
+        navigate("/user/ekonomi-creative/payment/pending");
+      })
+      .catch((error) => {
+        setValidation(error.response.data);
+      });
+  };
+
   return (
     <React.Fragment>
       <LayoutWeb>
@@ -32,14 +75,21 @@ function DetailItemEkonomiCreative() {
                     Nama Makanan <br />
                     Rp. 15.000
                   </strong>
-                  <form action="" method="post" className="mt-2">
+                  <form onSubmit={storeCategory} className="mt-2">
                     <input
                       type="number"
-                      name=""
-                      id=""
                       className="form-control"
+                      value={qty}
+                      onChange={(e) => setQty(e.target.value)}
+                      placeholder="Enter Category Name"
                       required
                     />
+                    {validation.qty && (
+                      <div className="alert alert-danger">
+                        {validation.qty[0]}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
                       className="btn btn-sm btn-success mt-1"
@@ -52,6 +102,7 @@ function DetailItemEkonomiCreative() {
             </Col>
           </Row>
         </div>
+        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

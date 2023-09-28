@@ -3,12 +3,45 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
+import "../../assets/css/text-justify.css";
+import Api from "../../api";
+import Cookies from "js-cookie";
 
 function DetailBiodiversity() {
   document.title = "Oluhuta Jorney";
 
+  let { id } = useParams();
+  const [biodiversitys, setBiodiversitys] = useState([]);
+  const [biodiversity, setBiodiversity] = useState([]);
+
   const navigate = useNavigate();
-   let { id } = useParams();
+  const token = Cookies.get("token");
+
+  const fetchDataDetail = async () => {
+    await Api.get("/api/client/geodiveristy/" + id, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setBiodiversity(response.data.data);
+    });
+  };
+
+  const fetchData = async () => {
+    await Api.get("/api/client/geodiveristy", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setBiodiversitys(response.data.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+    fetchDataDetail();
+  }, []);
+
   return (
     <React.Fragment>
       <LayoutWeb>
@@ -18,51 +51,36 @@ function DetailBiodiversity() {
               <div className="card">
                 <div className="card-body">
                   <img
-                    src="/assets/img/bg-home.png"
+                    src={
+                      import.meta.env.VITE_APP_BASEURL + "/" + biodiversity.path
+                    }
                     className="card-img-top"
                     alt=""
                   />
-                  <h5>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, necessitatibus!
-                  </h5>
-                  <p className="card-text mt-25">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus sed mollitia possimus quisquam. Harum maxime delectus eos qui. Incidunt aut rem delectus dignissimos. Saepe ex dolorem distinctio magnam quae veniam accusamus, vero eaque error debitis corrupti ducimus aliquid et, suscipit aut non eos, possimus velit architecto inventore quia? Ipsam labore sint reprehenderit iure provident ea quas qui error incidunt, quos maiores ad ex deserunt voluptatibus dolore, magnam temporibus debitis maxime minus itaque, nisi nam. Veniam nemo amet velit animi labore praesentium vitae possimus neque impedit dolore incidunt cum voluptate reiciendis sit, esse sapiente rem quae odio maiores suscipit error? Nam accusamus ratione ullam sapiente harum, dicta suscipit maiores porro provident modi aperiam obcaecati explicabo. Quas eaque omnis corporis tempore ipsum.
-                  </p>
+                  <h5>{biodiversity.judul}</h5>
+                  <p className="card-text mt-25">{biodiversity.isi}</p>
                 </div>
               </div>
             </Col>
             <Col xs={12} lg={4} sm={12} md={4}>
-              <div className="card mb-3">
-                <div className="card-body">
-                  <img
-                    src="/assets/img/bg-home.png"
-                    className="card-img-top"
-                    alt=""
-                  />
-                  <a href="">
-                  <h5>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  </h5>
-                  </a>
+              {biodiversitys.map((bio, index) => (
+                <div className="card mb-3">
+                  <div className="card-body">
+                    <img
+                      src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
+                      className="card-img-top"
+                      alt=""
+                    />
+                    <a href={"/user/biodiversity/" + bio.id}>
+                      <h5>{bio.judul}</h5>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    src="/assets/img/bg-home.png"
-                    className="card-img-top"
-                    alt=""
-                  />
-                  <a href="">
-                  <h5>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  </h5>
-                  </a>
-                </div>
-              </div>
+              ))}
             </Col>
           </Row>
         </div>
+        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

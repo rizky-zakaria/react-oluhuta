@@ -7,8 +7,8 @@ const Api = axios.create({
 
   headers: {
     Accept: "application/json",
-    "Content-Type": "application/json"
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 Api.interceptors.response.use(
@@ -19,7 +19,7 @@ Api.interceptors.response.use(
     if (401 === error.response.status) {
       Cookies.remove("token");
 
-      window.location = "/admin/login";
+      window.location = "/user/login";
     } else {
       return Promise.reject(error);
     }

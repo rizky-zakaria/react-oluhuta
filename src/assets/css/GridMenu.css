@@ -1,0 +1,23 @@
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Mengatur jumlah kolom dalam grid */
+  gap: 20px; /* Mengatur jarak antara item-menu */
+}
+
+.grid-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-menu li {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.grid-menu li a {
+  text-decoration: none;
+  color: #333;
+}

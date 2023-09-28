@@ -51,6 +51,7 @@ function Scanner() {
             </div>
           </center>
         </div>
+        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

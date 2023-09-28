@@ -19,6 +19,7 @@ import DetailRental from "../pages/Rental/Detail";
 import Kuliner from "../pages/Kuliner/Index";
 import DetailKuliner from "../pages/Kuliner/Detail";
 import DetailItemKuliner from "../pages/Kuliner/DetailItemKuliner";
+import CheckoutEkonomiCreative from "../pages/EkonomiCreative/Checkout";
 
 function RoutesIndex() {
   return (
@@ -96,6 +97,14 @@ function RoutesIndex() {
         element={
           <PrivateRoute>
             <DetailItemEkonomiCreative />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/user/ekonomi-creative/payment/:status"
+        element={
+          <PrivateRoute>
+            <CheckoutEkonomiCreative />
           </PrivateRoute>
         }
       />
