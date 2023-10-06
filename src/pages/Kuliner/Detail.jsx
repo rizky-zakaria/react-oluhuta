@@ -1,15 +1,35 @@
 import React, { useState, useEffect } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
 import "../../assets/css/text-justify.css";
+import Api from "../../api";
+import Cookies from "js-cookie";
 
 function DetailKuliner() {
   document.title = "Oluhuta Jorney";
 
+  const [products, setProducts] = useState([]);
+  const { id } = useParams();
   const navigate = useNavigate();
+  const token = Cookies.get("token");
 
+  const fetchData = async () => {
+    await Api.get("/api/client/merchant/" + id, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setProducts(response.data.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(products);
   const linkStyle = {
     textDecoration: "none",
     color: "inherit",
@@ -20,51 +40,25 @@ function DetailKuliner() {
       <LayoutWeb>
         <div className="container mt-100">
           <Row>
-            <Col xs={12} lg={4} sm={12} md={4}>
-              <a href="/user/ekonomi-creative/item/1" style={linkStyle}>
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <img
-                      src="/assets/img/bg-home.png"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <h5 className="mt-2">Nama Makanan A</h5>
-                    <span>Rp. 15.000</span>
+            {products.map((product, index) => (
+              <Col xs={12} lg={4} sm={12} md={4} key={index}>
+                <a href={"/user/kuliner/item/" + product.id} style={linkStyle}>
+                  <div className="card mb-3">
+                    <div className="card-body">
+                      <img
+                        src={
+                          import.meta.env.VITE_APP_BASEURL + "/" + product.path
+                        }
+                        className="card-img-top"
+                        alt=""
+                      />
+                      <h5 className="mt-2">{product.product}</h5>
+                      <span>{product.harga}</span>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Col>
-            <Col xs={12} lg={4} sm={12} md={4}>
-              <a href="/user/ekonomi-creative/item/1" style={linkStyle}>
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <img
-                      src="/assets/img/bg-home.png"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <h5 className="mt-2">Nama Makanan A</h5>
-                    <span>Rp. 15.000</span>
-                  </div>
-                </div>
-              </a>
-            </Col>
-            <Col xs={12} lg={4} sm={12} md={4}>
-              <a href="/user/ekonomi-creative/item/1" style={linkStyle}>
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <img
-                      src="/assets/img/bg-home.png"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <h5 className="mt-2">Nama Makanan A</h5>
-                    <span>Rp. 15.000</span>
-                  </div>
-                </div>
-              </a>
-            </Col>
+                </a>
+              </Col>
+            ))}
           </Row>
         </div>
         <div className="mt-100"></div>

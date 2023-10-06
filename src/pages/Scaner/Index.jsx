@@ -4,12 +4,31 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
+import Api from "../../api";
+
+//import js cookie
+import Cookies from "js-cookie";
 function Scanner() {
   document.title = "Oluhuta Jorney";
-
   const navigate = useNavigate();
 
+  const token = Cookies.get("token");
+  const [user, setUser] = useState({});
+
   const [scanResult, setScanResult] = useState(null);
+
+  const fetchDataUser = async () => {
+    //fetching Rest API "user"
+    await Api.get("/api/admin/user", {
+      headers: {
+        //header Bearer + Token
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      //set data to state
+      setUser(response.data);
+    });
+  };
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
@@ -30,6 +49,11 @@ function Scanner() {
     function error(err) {
       console.warn(err);
     }
+
+    if (token) {
+      //call function "fetchDataUser"
+      fetchDataUser();
+    }
   }, []);
 
   return (
@@ -39,14 +63,14 @@ function Scanner() {
           <center>
             <div className="App">
               <h1>Scan Kunjungan</h1>
-              {scanResult ? (
+              {scanResult === null ? (
+                <div id="reader"></div>
+              ) : (
                 <div>
-                  <a href={scanResult} className="btn btn-success">
+                  <a href={scanResult + user.id} className="btn btn-success">
                     Tandai Kunjungan
                   </a>
                 </div>
-              ) : (
-                <div id="reader"></div>
               )}
             </div>
           </center>

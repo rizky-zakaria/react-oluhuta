@@ -16,7 +16,7 @@ function EkonomiCreative() {
   const token = Cookies.get("token");
 
   const fetchData = async () => {
-    await Api.get("/api/client/merchant-ekonomi-kreatif", {
+    await Api.get("/api/client/merchant", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -45,13 +45,13 @@ function EkonomiCreative() {
                   <h5> UMKM LOKAL</h5>
                   <div>
                     <a
-                      href="/user/ekonomi-creative/payment/pending"
+                      href="/user/transaksis/payment/pending"
                       className="btn btn-sm btn-warning text-light m-1"
                     >
                       Belum Dibayar
                     </a>
                     <a
-                      href="/user/ekonomi-creative/payment/capture"
+                      href="/user/transaksis/payment/capture"
                       className="btn btn-sm btn-primary text-light"
                     >
                       Selesai

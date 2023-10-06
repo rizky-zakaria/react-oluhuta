@@ -7,36 +7,17 @@ import "../../assets/css/text-justify.css";
 import toast from "react-hot-toast";
 import Api from "../../api";
 import Cookies from "js-cookie";
-import { rupiahConvert } from "../../helpers/RupiahConvert.js";
 
-function DetailItemEkonomiCreative() {
+function DetailItemRental() {
   document.title = "Oluhuta Jorney";
 
-  const [products, setProducts] = useState([]);
-  const [harga, setHarga] = useState();
   const navigate = useNavigate();
   const [qty, setQty] = useState("");
   const token = Cookies.get("token");
   let { id } = useParams();
   const [validation, setValidation] = useState({});
 
-  const fetchData = async () => {
-    await Api.get("/api/client/product/" + id, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((response) => {
-      // console.log(response);
-      setProducts(response.data.data);
-      // rupiahConvert(response.data.data.harga);
-    });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const storeCategory = async (e) => {
+  const storeRental = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -80,7 +61,7 @@ function DetailItemEkonomiCreative() {
               <div className="card">
                 <div className="card-body">
                   <img
-                    src={import.meta.env.VITE_APP_BASEURL + "/" + products.path}
+                    src="/assets/img/bg-home.png"
                     className="card-img-top"
                     alt=""
                   />
@@ -91,10 +72,10 @@ function DetailItemEkonomiCreative() {
               <div className="card mb-3">
                 <div className="card-body">
                   <strong>
-                    {products.product} <br />
-                    {harga}
+                    Nama Makanan <br />
+                    Rp. 15.000
                   </strong>
-                  <form onSubmit={storeCategory} className="mt-2">
+                  <form onSubmit={storeRental} className="mt-2">
                     <input
                       type="number"
                       className="form-control"
@@ -127,4 +108,4 @@ function DetailItemEkonomiCreative() {
   );
 }
 
-export default DetailItemEkonomiCreative;
+export default DetailItemRental;

@@ -28,7 +28,7 @@ function Login() {
 
     await Api.post("/api/client/login", {
       email: email,
-      password: password
+      password: password,
     })
       .then((response) => {
         //set state isLoading to "false"
@@ -40,8 +40,8 @@ function Login() {
           style: {
             borderRadius: "10px",
             background: "#333",
-            color: "#fff"
-          }
+            color: "#fff",
+          },
         });
 
         Cookies.set("token", response.data.token);
@@ -70,7 +70,7 @@ function Login() {
             <div className="text-center mb-4">
               <h4>
                 <i className="fa fa-map-marked-alt"></i>{" "}
-                <strong>TRAVEL GIS</strong>
+                <strong>OLUHUTA JOURNEY</strong>
               </h4>
             </div>
             <div className="card border-0 rounded shadow-sm">

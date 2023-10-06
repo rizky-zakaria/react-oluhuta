@@ -16,10 +16,13 @@ import DetailItemEkonomiCreative from "../pages/EkonomiCreative/DetailItemEkonom
 import Scanner from "../pages/Scaner/Index";
 import Rental from "../pages/Rental/Index";
 import DetailRental from "../pages/Rental/Detail";
+import DetailItemRental from "../pages/Rental/DetailItemRental";
 import Kuliner from "../pages/Kuliner/Index";
 import DetailKuliner from "../pages/Kuliner/Detail";
 import DetailItemKuliner from "../pages/Kuliner/DetailItemKuliner";
 import CheckoutEkonomiCreative from "../pages/EkonomiCreative/Checkout";
+import CheckoutRental from "../pages/Rental/Checkout";
+import Checkout from "../pages/Checkout/Checkout";
 
 function RoutesIndex() {
   return (
@@ -101,14 +104,6 @@ function RoutesIndex() {
         }
       />
       <Route
-        path="/user/ekonomi-creative/payment/:status"
-        element={
-          <PrivateRoute>
-            <CheckoutEkonomiCreative />
-          </PrivateRoute>
-        }
-      />
-      <Route
         path="/user/scan/"
         element={
           <PrivateRoute>
@@ -133,6 +128,14 @@ function RoutesIndex() {
         }
       />
       <Route
+        path="/user/rental/item/:id"
+        element={
+          <PrivateRoute>
+            <DetailItemRental />
+          </PrivateRoute>
+        }
+      />
+      <Route
         path="/user/kuliner"
         element={
           <PrivateRoute>
@@ -153,6 +156,14 @@ function RoutesIndex() {
         element={
           <PrivateRoute>
             <DetailItemKuliner />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/user/transaksis/payment/:status"
+        element={
+          <PrivateRoute>
+            <Checkout />
           </PrivateRoute>
         }
       />
