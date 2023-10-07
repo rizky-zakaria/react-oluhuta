@@ -57,8 +57,8 @@ function DetailBiodiversity() {
                     className="card-img-top"
                     alt=""
                   />
-                  <h5>{biodiversity.judul}</h5>
-                  <p className="card-text mt-25">{biodiversity.isi}</p>
+                  <h5 className="mb-3">{biodiversity.judul}</h5>
+                  {biodiversity.isi}
                 </div>
               </div>
             </Col>

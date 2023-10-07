@@ -56,8 +56,8 @@ function DetailGeodiversity() {
                     className="card-img-top"
                     alt=""
                   />
-                  <h5>{geodiversity.judul}</h5>
-                  <p className="card-text mt-25">{geodiversity.isi}</p>
+                  <h5 className="mb-3">{geodiversity.judul}</h5>
+                  {geodiversity.isi}
                 </div>
               </div>
             </Col>
