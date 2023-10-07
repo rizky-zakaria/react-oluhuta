@@ -49,7 +49,9 @@ function DetailEkonomiCreative() {
                   <div className="card mb-3">
                     <div className="card-body">
                       <img
-                        src="/assets/img/bg-home.png"
+                        src={
+                          import.meta.env.VITE_APP_BASEURL + "/" + product.path
+                        }
                         className="card-img-top"
                         alt=""
                       />
