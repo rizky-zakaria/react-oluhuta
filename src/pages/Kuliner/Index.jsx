@@ -16,7 +16,7 @@ function Kuliner() {
   const token = Cookies.get("token");
 
   const fetchData = async () => {
-    await Api.get("/api/client/merchant", {
+    await Api.get("/api/client/product", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -74,11 +74,8 @@ function Kuliner() {
                       />
                       <div className="card-footer mt-2">
                         <div className="row">
-                          <div className="col-1">
-                            <i className="fas fa-map-marker-alt text-danger  m-2"></i>
-                          </div>
-                          <div className="col-11">
-                            <h5 className="mt-2">{merchant.nama}</h5>
+                          <div className="col-12">
+                            <h5 className="mt-2">{merchant.product}</h5>
                             <span>{merchant.deskripsi}</span>
                           </div>
                         </div>
