@@ -36,6 +36,7 @@ function DetailCulturdiversity() {
     });
   };
 
+  const regex = /(<([^>]+)>)/gi;
   useEffect(() => {
     fetchData();
     fetchDataDetail();
@@ -55,7 +56,7 @@ function DetailCulturdiversity() {
                       alt=""
                     />
                     <h5 className="mb-3">{cul.judul}</h5>
-                    {cul.isi}
+                    {cul.isi.replace(regex, "")}
                   </div>
                 </div>
               </Col>

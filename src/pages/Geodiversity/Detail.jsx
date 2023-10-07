@@ -36,6 +36,7 @@ function DetailGeodiversity() {
     });
   };
 
+  const regex = /(<([^>]+)>)/gi;
   useEffect(() => {
     fetchData();
     fetchDataDetail();
@@ -57,7 +58,7 @@ function DetailGeodiversity() {
                     alt=""
                   />
                   <h5 className="mb-3">{geodiversity.judul}</h5>
-                  {geodiversity.isi}
+                  {geodiversity.isi.replace(regex, "")}
                 </div>
               </div>
             </Col>
