@@ -92,7 +92,7 @@ function DetailItemEkonomiCreative() {
                 <div className="card-body">
                   <strong>
                     {products.product} <br />
-                    {harga}
+                    {products.harga}
                   </strong>
                   <form onSubmit={storeCategory} className="mt-2">
                     <input
