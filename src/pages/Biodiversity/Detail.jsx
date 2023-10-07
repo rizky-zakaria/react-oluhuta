@@ -28,7 +28,7 @@ function DetailBiodiversity() {
   };
 
   const fetchData = async () => {
-    await Api.get("/api/client/geodiveristy", {
+    await Api.get("/api/client/biodiversity", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

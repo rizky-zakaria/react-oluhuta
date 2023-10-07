@@ -16,7 +16,7 @@ function Biodiversity() {
   const token = Cookies.get("token");
 
   const fetchData = async () => {
-    await Api.get("/api/client/geodiveristy", {
+    await Api.get("/api/client/biodiversity", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

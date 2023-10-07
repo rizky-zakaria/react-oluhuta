@@ -15,7 +15,7 @@ function Culturdiversity() {
   const token = Cookies.get("token");
 
   const fetchData = async () => {
-    await Api.get("/api/client/geodiveristy", {
+    await Api.get("/api/client/culturdiversity", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
