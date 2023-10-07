@@ -61,74 +61,62 @@ function Home() {
                   <div className="card-body">
                     <Container fluid="md">
                       <Row>
-                        <Col xs={4} md={4} lg={4} sm={4}>
+                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
                           <a href="/user/geodiversity">
                             <img
                               src="assets/img/geo.svg"
                               alt=""
-                              width={"85px"}
+                              width={100}
                               className="img-fluid"
                             />
                           </a>
                         </Col>
-                        <Col xs={4} md={4} lg={4} sm={4}>
+                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
                           <a href="/user/culturdiversity">
                             <img
                               src="assets/img/cultur.svg"
                               alt=""
-                              width={"100px"}
+                              width={100}
                               className="img-fluid"
                             />
                           </a>
                         </Col>
-                        <Col xs={4} md={4} lg={4} sm={4}>
+                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
                           <a href="/user/biodiversity">
                             <img
                               src="assets/img/biodeversity.svg"
                               alt=""
-                              width={"85px"}
+                              width={100}
                               className="img-fluid"
                             />
                           </a>
                         </Col>
-                      </Row>
-                      <Row>
-                        <Col xs={3} md={3} lg={3} sm={3}>
+                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
                           <a href="/user/ekonomi-creative">
                             <img
-                              src="assets/img/ekonomi-kreatif.png"
+                              src="assets/img/ekonomi-kreatif.svg"
                               alt=""
-                              width={"100px"}
+                              width={100}
                               className="img-fluid"
                             />
                           </a>
                         </Col>
-                        <Col xs={3} md={3} lg={3} sm={3}>
+                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
                           <a href="/user/scan/">
                             <img
-                              src="assets/img/scan.png"
+                              src="assets/img/scan.svg"
                               alt=""
-                              width={"85px"}
+                              width={100}
                               className="img-fluid"
                             />
                           </a>
                         </Col>
-                        <Col xs={3} md={3} lg={3} sm={3}>
-                          <a href="/user/rental">
-                            <img
-                              src="assets/img/penyewaan.png"
-                              alt=""
-                              width={"100px"}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                        <Col xs={3} md={3} lg={3} sm={3}>
+                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
                           <a href="/user/kuliner">
                             <img
-                              src="assets/img/kuliner.png"
+                              src="assets/img/kuliner.svg"
                               alt=""
-                              width={"85px"}
+                              width={100}
                               className="img-fluid"
                             />
                           </a>
@@ -181,23 +169,14 @@ function Home() {
               <Row>
                 <Col xs={12} sm={12} md={7} lg={7}>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Obcaecati earum accusantium, dolore ut distinctio odit,
-                    magni ea reprehenderit voluptatum laborum at ipsam ex? Ut
-                    voluptates odio maiores fuga. Voluptas eveniet voluptatum
-                    impedit laborum, quod dolorem dolore soluta eius deserunt,
-                    voluptates corrupti, similique animi? Repudiandae, ducimus
-                    id nisi delectus officiis debitis? Maiores, sit. Animi
-                    doloribus impedit commodi sint? Quasi fugiat nesciunt
-                    perspiciatis porro quibusdam nihil dolore laudantium
-                    commodi, ducimus rerum eaque corrupti ad doloribus
-                    repudiandae? Exercitationem laboriosam qui quidem ratione
-                    veniam, quisquam vitae blanditiis voluptatibus corporis
-                    dolor, iure atque, repellendus rem enim. Natus, amet enim!
-                    Reprehenderit temporibus reiciendis necessitatibus eos quis
-                    numquam maxime ipsam eius recusandae ea accusantium, ex
-                    quidem non iste maiores vitae fuga minus iusto atque
-                    dignissimos. Accusantium, iste!
+                    Desa Oluhuta adalah sebuah desa yang terletak di Kabupaten
+                    Bone Balango, Kecamatan Kabila Bone, Provinsi Gorontalo.
+                    Desa ini terdiri dari empat dusun diantaranya Dusun Pantai,
+                    Dusun Kampung Baru, Dusun Pemukiman, dan Dusun Huliya,
+                    dengan luas keseluruhannya yakni 1.960 hektar. Wilayah desa
+                    Oluhuta didominasi oleh perairan, hutan dan pengunungan,
+                    serta perkebunan, oleh sebab itu 52,6 penduduk setempat
+                    berprofesi sebagai petani dan 42,8 sebagai nelayan.
                   </p>
                 </Col>
                 <Col xs={12} sm={12} md={5} lg={5} className="rounded">

@@ -19,8 +19,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 function About() {
   //title page
-  document.title =
-    "TRAVEL GIS - Website Wisata Berbasis GIS (Geographic Information System)";
+  document.title = "Oluhuta JOURNEY";
 
   //navigate
   const navigate = useNavigate();
@@ -48,63 +47,44 @@ function About() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <Row className="m-50">
-            <Col xs={12} lg={8} md={8}>
+        <div className="container mt-100 mb-5">
+          <Row className="m-5">
+            <Col xs={12} lg={12} md={12}>
               <div className="card">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
+                <img src="assets/img/bg-home.png" alt="" width={"100%"} />
                 <div className="card-body">
-                  <h3>Menampilkan Judul Untuk Konten Ini</h3>
+                  <center>
+                    <h3>Tentang Oluhuta Journey</h3>
+                  </center>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                    perferendis, impedit unde facere alias harum praesentium sit
-                    sapiente incidunt blanditiis odit a doloribus amet soluta
-                    consequatur possimus! Ipsam vel architecto non, doloremque
-                    sit perspiciatis ex, laboriosam cupiditate maiores beatae,
-                    eaque ab necessitatibus totam sequi quo dicta quae? Tempora
-                    est temporibus voluptas ut facere quaerat dolorum facilis
-                    delectus, nostrum dolores doloremque iste quia commodi fuga
-                    saepe voluptates nam sunt at minima eos. Totam
-                    necessitatibus ipsum dolorum recusandae dicta similique?
-                    Atque delectus cumque magnam ad amet fugiat iure, voluptate
-                    ea tempore vel a beatae aliquid rerum magni explicabo,
-                    quaerat doloribus alias ratione.
+                    Oluhuta Journey adalah aplikasi mobile app marketing untuk
+                    menampilkan informasi yang lebih detail terkait
+                    potensi-potensi alam Desa Oluhuta sehingga dapat mengedukasi
+                    wisatawan tentang literasi digital dan literasi informasi
+                    dalam pengimplementasiannya sebagai sarana Edu-geowisata.
+                    Selain itu web ini berfungsi sebagai media promosi wisata
+                    dengan tujuan menjadikan Desa Oluhuta sebagai desa
+                    edu-geowisata pertama di Indonesia. Dengan adanya aplikasi
+                    ini, potensi-potensi Desa Oluhuta yang menjadi objek wisata
+                    dapat dipromosikan secara global dan menjadi rujukan utama
+                    wisatawan. Oluhuta Journey dikembangakan pertama kali oleh
+                    mahasiswa yang tergabung dalam tim Program Holistik
+                    Pembinaan dan Pemberdayaan Desa (PHP2D) Universitas Negeri
+                    Gorontalo (UNG) tahun 2021. Kemudian situs web ini di
+                    kembangkan dan dikelola oleh Kelompok Sadar Wisata Desa
+                    Oluhuta dibawah naungan pemerintah Desa Oluhuta. Telah
+                    diresmikan oleh bapak Bupati Bone Bolanga Bapak Dr. H. Hamim
+                    Pou, S.Kom, M.H. pada tanggal 1 Januari 2021 sebagai Desa
+                    Eduu-Geowisata
                   </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                    perferendis, impedit unde facere alias harum praesentium sit
-                    sapiente incidunt blanditiis odit a doloribus amet soluta
-                    consequatur possimus! Ipsam vel architecto non, doloremque
-                    sit perspiciatis ex, laboriosam cupiditate maiores beatae,
-                    eaque ab necessitatibus totam sequi quo dicta quae? Tempora
-                    est temporibus voluptas ut facere quaerat dolorum facilis
-                    delectus, nostrum dolores doloremque iste quia commodi fuga
-                    saepe voluptates nam sunt at minima eos. Totam
-                    necessitatibus ipsum dolorum recusandae dicta similique?
-                    Atque delectus cumque magnam ad amet fugiat iure, voluptate
-                    ea tempore vel a beatae aliquid rerum magni explicabo,
-                    quaerat doloribus alias ratione.
-                  </p>
+                  <center>
+                    <img src="assets/img/oluhuta.svg" alt="" className="mt-5" />
+                    <b className="mb-5">
+                      <br />
+                      Pemerintah Desa Oluhuta
+                    </b>
+                  </center>
                 </div>
-              </div>
-            </Col>
-            <Col xs={12} lg={4} md={4} className="bg-white">
-              <strong>Lainnya</strong>
-              <div className="card">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-              <div className="card mt-2">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-              <div className="card mt-2">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-              <div className="card mt-2">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
               </div>
             </Col>
           </Row>

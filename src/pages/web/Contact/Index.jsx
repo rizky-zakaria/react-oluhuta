@@ -48,66 +48,59 @@ function Contact() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <Row className="m-50">
-            <Col xs={12} lg={8} md={8}>
+        <div className="container mt-100 mb-5">
+          <Row className="m-5">
+            <Col xs={12} lg={12} md={12}>
               <div className="card">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
+                <img src="assets/img/bg-home.png" alt="" width={"100%"} />
                 <div className="card-body">
-                  <h3>Menampilkan Judul Untuk Konten Ini</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                    perferendis, impedit unde facere alias harum praesentium sit
-                    sapiente incidunt blanditiis odit a doloribus amet soluta
-                    consequatur possimus! Ipsam vel architecto non, doloremque
-                    sit perspiciatis ex, laboriosam cupiditate maiores beatae,
-                    eaque ab necessitatibus totam sequi quo dicta quae? Tempora
-                    est temporibus voluptas ut facere quaerat dolorum facilis
-                    delectus, nostrum dolores doloremque iste quia commodi fuga
-                    saepe voluptates nam sunt at minima eos. Totam
-                    necessitatibus ipsum dolorum recusandae dicta similique?
-                    Atque delectus cumque magnam ad amet fugiat iure, voluptate
-                    ea tempore vel a beatae aliquid rerum magni explicabo,
-                    quaerat doloribus alias ratione.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                    perferendis, impedit unde facere alias harum praesentium sit
-                    sapiente incidunt blanditiis odit a doloribus amet soluta
-                    consequatur possimus! Ipsam vel architecto non, doloremque
-                    sit perspiciatis ex, laboriosam cupiditate maiores beatae,
-                    eaque ab necessitatibus totam sequi quo dicta quae? Tempora
-                    est temporibus voluptas ut facere quaerat dolorum facilis
-                    delectus, nostrum dolores doloremque iste quia commodi fuga
-                    saepe voluptates nam sunt at minima eos. Totam
-                    necessitatibus ipsum dolorum recusandae dicta similique?
-                    Atque delectus cumque magnam ad amet fugiat iure, voluptate
-                    ea tempore vel a beatae aliquid rerum magni explicabo,
-                    quaerat doloribus alias ratione.
-                  </p>
+                  <center>
+                    <h3>Oluhuta Journey</h3>
+                    <a href="https://www.instagram.com/oluhuta.journey/?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw">
+                      <img
+                        src="assets/img/instagram.png"
+                        alt=""
+                        width={50}
+                        className="m-4"
+                      />
+                    </a>
+                    <a href="https://www.facebook.com/oluhuta.journey">
+                      <img
+                        src="assets/img/facebook.png"
+                        alt=""
+                        width={50}
+                        className="m-4"
+                      />
+                    </a>
+                    <a href="https://www.youtube.com/@oluhutajourney7371">
+                      <img
+                        src="assets/img/youtube.png"
+                        alt=""
+                        width={50}
+                        className="m-4"
+                      />
+                    </a>
+                    <a href="https://www.tiktok.com/@oluhutajourney">
+                      <img
+                        src="assets/img/tiktok.png"
+                        alt=""
+                        width={50}
+                        className="m-4"
+                      />
+                    </a>
+                  </center>
+                  <center>
+                    <img src="assets/img/oluhuta.svg" alt="" className="mt-5" />
+                    <b className="mb-5">
+                      <br />
+                      Pemerintah Desa Oluhuta
+                    </b>
+                  </center>
                 </div>
               </div>
             </Col>
-            <Col xs={12} lg={4} md={4} className="bg-white">
-              <strong>Lainnya</strong>
-              <div className="card">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-              <div className="card mt-2">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-              <div className="card mt-2">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-              <div className="card mt-2">
-                <img src="assets/img/dummy.png" alt="" width={"100%"} />
-                <h5 className="m-2">Judul dari ini juga</h5>
-              </div>
-            </Col>
           </Row>
+          <br />
         </div>
       </LayoutWeb>
     </React.Fragment>
