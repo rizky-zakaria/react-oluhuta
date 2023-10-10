@@ -19,6 +19,22 @@ function Home() {
 
   const navigate = useNavigate();
   const [beritas, setBeritas] = useState([]);
+  const konten = `      Desa Oluhuta adalah sebuah desa yang terletak di Kabupaten Bone Balango, Kecamatan Kabila Bone, Provinsi Gorontalo. Desa ini terdiri dari empat dusun diantaranya Dusun Pantai, Dusun Kampung Baru, Dusun Pemukiman, dan Dusun Huliya,  dengan luas keseluruhannya yakni 1.960 hektar. Wilayah desa Oluhuta didominasi oleh perairan, hutan dan pengunungan, serta perkebunan, oleh sebab itu 52,6 penduduk setempat berprofesi sebagai petani dan 42,8 sebagai nelayan.
+
+        Desa Oluhuta terletak berdekatan dengan Desa Botubarani juga Desa Olele yang saoat inl sudah menjadi desa ikonik untuk Provinsi Gorontalo karena potensi wisata bawah laut berupa spesies hiu pous dan terumbu karang yang langka dan cantik. Sama halnya seperti Desa Botubarani dan Olele, potensi dan pesona wisata di Desa Oluhuta tidak kalah menarik. Ada berbagai kekayaan, keunikan geologis, sejarah, serta nilai kebudayaan yang tersimpan di desa yang merupakan cagar budaya ini, antara lain terdapat situs kerangka manusia Oluhuta yang ditemukan sekitar tahun 1994 sampai dengan 2010 silam, ada pula situs lautan terangkat atau biasa dikenal dengan teras terumbu yang terhampar disepanjang pantai Oluhuta dengan aneka rupa yang menambah estetika pantai, serta jajaran Colmunar joint atau kekar kolom dengan bentuk heksagonalnya yang unik yang bisa dijumpai soot memasuki wilayah desa Oluhuta.
+
+     Di sisi lain, desa Oluhuta juga menawarkan pesona bawah laut yang tak kalah indahnya dengan desa Olele, dengan adanya Salvador Dali atau Petrosia lignosa yaitu spesies terumbu karang yang langka ditambah dengan ribuan ikan karang dan penyu, dipastikan mampu membuat setiap mata yang memandangnya menjadi terkesima oleh keindahannya.Tunggu apa apalagi? Mari mengeksplor desa Oluhuta dan dapatkan pengalaman seru dan pastinya berkesan melalui Oluhuta Journey.Oluhuta Journey: Here's your wonderful journey begin!
+
+Lokasi
+Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
+
+`;
+
+  const [showFullContent, setShowFullContent] = useState(false);
+
+  const toggleContent = () => {
+    setShowFullContent(!showFullContent);
+  };
 
   const token = Cookies.get("token");
 
@@ -143,7 +159,7 @@ function Home() {
                 </Row>
                 <Row>
                   {beritas.map((berita, index) => (
-                    <Col xs={4} lg={4} md={4} sm={4} key={index}>
+                    <Col xs={12} lg={4} md={4} sm={12} key={index}>
                       <div className="card">
                         <img
                           src={
@@ -171,16 +187,18 @@ function Home() {
             <div className="card-body">
               <Row>
                 <Col xs={12} sm={12} md={7} lg={7}>
-                  <p>
-                    Desa Oluhuta adalah sebuah desa yang terletak di Kabupaten
-                    Bone Balango, Kecamatan Kabila Bone, Provinsi Gorontalo.
-                    Desa ini terdiri dari empat dusun diantaranya Dusun Pantai,
-                    Dusun Kampung Baru, Dusun Pemukiman, dan Dusun Huliya,
-                    dengan luas keseluruhannya yakni 1.960 hektar. Wilayah desa
-                    Oluhuta didominasi oleh perairan, hutan dan pengunungan,
-                    serta perkebunan, oleh sebab itu 52,6 penduduk setempat
-                    berprofesi sebagai petani dan 42,8 sebagai nelayan.
-                  </p>
+                  {/* <p></p> */}
+                  {showFullContent ? (
+                    <p>{konten}</p>
+                  ) : (
+                    <p>{konten.slice(0, 600)}...</p>
+                  )}
+                  <button
+                    onClick={toggleContent}
+                    className="btn btn-sm btn-light text-dark"
+                  >
+                    {showFullContent ? "Lebih Sedikit" : "Baca Selengkapnya"}
+                  </button>
                 </Col>
                 <Col xs={12} sm={12} md={5} lg={5} className="rounded">
                   <img src="/assets/img/bg-home.png" alt="" width={"100%"} />
