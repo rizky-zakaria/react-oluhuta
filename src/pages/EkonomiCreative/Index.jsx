@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
 import "../../assets/css/text-justify.css";
 import Api from "../../api";
@@ -38,6 +38,15 @@ function EkonomiCreative() {
     <React.Fragment>
       <LayoutWeb>
         <div className="container mt-100">
+          <Image
+            src="/assets/img/header-umkm.png"
+            xs={12}
+            lg={12}
+            sm={12}
+            md={12}
+            width={"100%"}
+          />
+          {/* <img src="/assets/img/header-umkm.png" alt="" /> */}
           <Row>
             <Col xs={12} lg={12} sm={12} md={12} className="mb-5">
               <div className="card">
