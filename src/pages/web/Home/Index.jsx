@@ -11,6 +11,7 @@ import Footer from "../../../components/utilities/Footer";
 import "../../../assets/css/text-justify.css";
 import Api from "../../../api";
 import Cookies from "js-cookie";
+import Slider from "../../../components/web/Slider";
 
 function Home() {
   document.title =
@@ -53,7 +54,9 @@ function Home() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
+        <div className="container mt-100"></div>
+        <Slider />
+        <div className="container mt-5">
           <Row className="m-50">
             <Col xs={12} lg={12} md={12} className="mb-2" style={topHome}>
               <center>
