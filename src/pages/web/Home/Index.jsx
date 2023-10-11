@@ -188,6 +188,11 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
               marginBottom: "20px",
             }}
           >
+            <div className="card-header" style={{ backgroundColor: "white" }}>
+              <h2>
+                <b> Fiturs</b>
+              </h2>
+            </div>
             <div className="card-body">
               <Row>
                 <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
@@ -233,6 +238,9 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
             </div>
             <div className="card-body">
               <Row>
+                <Col xs={12} sm={12} md={5} lg={5} className="rounded">
+                  <img src="/assets/img/bg-home.png" alt="" width={"100%"} />
+                </Col>
                 <Col xs={12} sm={12} md={7} lg={7}>
                   {/* <p></p> */}
                   {showFullContent ? (
@@ -242,14 +250,14 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                   )}
                   <button
                     onClick={toggleContent}
-                    className="btn btn-sm btn-light text-dark"
+                    className="btn btn-sm btn-light text-dark mb-2"
                   >
                     {showFullContent ? "Lebih Sedikit" : "Baca Selengkapnya"}
                   </button>
                 </Col>
-                <Col xs={12} sm={12} md={5} lg={5} className="rounded">
+                {/* <Col xs={0} sm={0} md={5} lg={5} className="rounded">
                   <img src="/assets/img/bg-home.png" alt="" width={"100%"} />
-                </Col>
+                </Col> */}
               </Row>
             </div>
           </div>
