@@ -180,6 +180,53 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
               </center>
             </Col>
           </Row>
+          <div
+            className="card"
+            style={{
+              backgroundColor: "#FFF",
+              padding: "20px",
+              marginBottom: "20px",
+            }}
+          >
+            <div className="card-body">
+              <Row>
+                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                  <img
+                    src="./assets/img/text-geodiversity.png"
+                    alt=""
+                    width={"100%"}
+                  />
+                </Col>
+                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                  <img
+                    src="./assets/img/text-culturdiversity.png"
+                    width={"100%"}
+                    alt=""
+                  />
+                </Col>
+                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                  <img
+                    src="./assets/img/text-biodiversity.png"
+                    width={"100%"}
+                    alt=""
+                  />
+                </Col>
+                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                  <img src="./assets/img/text-umkm.png" alt="" width={"100%"} />
+                </Col>
+                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                  <img src="./assets/img/text-egd.png" width={"100%"} alt="" />
+                </Col>
+                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                  <img
+                    src="./assets/img/text-kuliner.png"
+                    width={"100%"}
+                    alt=""
+                  />
+                </Col>
+              </Row>
+            </div>
+          </div>
           <div className="bg-primary text-light card">
             <div className="card-header">
               <h4>Introduction</h4>
