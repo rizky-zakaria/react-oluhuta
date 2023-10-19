@@ -6,9 +6,10 @@ import LayoutWeb from "../../../layouts/Web";
 
 //import react router dom
 import { useNavigate } from "react-router-dom";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import Footer from "../../../components/utilities/Footer";
 import "../../../assets/css/text-justify.css";
+import "../../../assets/css/aboveSlider.css";
 import Api from "../../../api";
 import Cookies from "js-cookie";
 import Slider from "../../../components/web/Slider";
@@ -62,208 +63,246 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
   };
 
   const cardHeader = {
-    marginTop: "150px",
+    marginTop: "50px",
     width: "70%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0)",
   };
 
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100"></div>
-        <Slider />
-        <div className="container mt-5">
-          <Row className="m-50">
-            <Col xs={12} lg={12} md={12} className="mb-2" style={topHome}>
-              <center>
-                <div className="card" style={cardHeader}>
-                  <div className="card-body">
-                    <Container fluid="md">
-                      <Row>
-                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
-                          <a href="/user/geodiversity">
-                            <img
-                              src="assets/img/geo.svg"
-                              alt=""
-                              width={100}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
-                          <a href="/user/culturdiversity">
-                            <img
-                              src="assets/img/cultur.svg"
-                              alt=""
-                              width={100}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
-                          <a href="/user/biodiversity">
-                            <img
-                              src="assets/img/biodeversity.svg"
-                              alt=""
-                              width={100}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
-                          <a href="/user/ekonomi-creative">
-                            <img
-                              src="assets/img/ekonomi-kreatif.svg"
-                              alt=""
-                              width={100}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
-                          <a href="/user/scan/">
-                            <img
-                              src="assets/img/scan.svg"
-                              alt=""
-                              width={100}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                        <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
-                          <a href="/user/kuliner">
-                            <img
-                              src="assets/img/kuliner.svg"
-                              alt=""
-                              width={100}
-                              className="img-fluid"
-                            />
-                          </a>
-                        </Col>
-                      </Row>
-                    </Container>
-                  </div>
-                </div>
-              </center>
-            </Col>
-            <Col xs={12} lg={12} md={12} className="mb-2">
-              <center>
-                <Row>
-                  <Col>
-                    <div className="card mb-1">
-                      <div className="card-body d-flex justify-content-start">
-                        <h5>Berita Terkait</h5>
-                      </div>
+        <div style={{ backgroundColor: "#FFF" }}>
+          <div className="container mt-100"></div>
+          <Slider />
+          <div className="">
+            <Row className="m-50">
+              <Col xs={12} lg={12} md={12} className="mb-2" style={topHome}>
+                <center>
+                  <img
+                    src="./assets/img/text-top-menu.png"
+                    alt=""
+                    width={"400px"}
+                    style={{ marginTop: "100px" }}
+                  />
+                  <div className="card" style={cardHeader}>
+                    <div className="card-body">
+                      <Container fluid="md">
+                        <Row>
+                          <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
+                            <a href="/user/geodiversity">
+                              <img
+                                src="assets/img/geo.svg"
+                                alt=""
+                                width={100}
+                                className="img-fluid"
+                              />
+                            </a>
+                          </Col>
+                          <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
+                            <a href="/user/culturdiversity">
+                              <img
+                                src="assets/img/cultur.svg"
+                                alt=""
+                                width={100}
+                                className="img-fluid"
+                              />
+                            </a>
+                          </Col>
+                          <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
+                            <a href="/user/biodiversity">
+                              <img
+                                src="assets/img/biodeversity.svg"
+                                alt=""
+                                width={100}
+                                className="img-fluid"
+                              />
+                            </a>
+                          </Col>
+                          <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
+                            <a href="/user/ekonomi-creative">
+                              <img
+                                src="assets/img/ekonomi-kreatif.svg"
+                                alt=""
+                                width={100}
+                                className="img-fluid"
+                              />
+                            </a>
+                          </Col>
+                          <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
+                            <a href="/user/scan/">
+                              <img
+                                src="assets/img/scan.svg"
+                                alt=""
+                                width={100}
+                                className="img-fluid"
+                              />
+                            </a>
+                          </Col>
+                          <Col xs={6} md={4} lg={4} sm={6} className="mt-2">
+                            <a href="/user/kuliner">
+                              <img
+                                src="assets/img/kuliner.svg"
+                                alt=""
+                                width={100}
+                                className="img-fluid"
+                              />
+                            </a>
+                          </Col>
+                        </Row>
+                      </Container>
                     </div>
-                  </Col>
-                </Row>
-                <Row>
-                  {beritas.map((berita, index) => (
-                    <Col xs={12} lg={4} md={4} sm={12} key={index}>
-                      <div className="card">
-                        <img
-                          src={
-                            import.meta.env.VITE_APP_BASEURL + "/" + berita.path
-                          }
-                          alt=""
-                          className="card-img-top"
-                        />
-                        <div className="card-body">
-                          <strong className="card-title d-flex justify-content-start">
-                            {berita.judul}
-                          </strong>
+                  </div>
+                </center>
+              </Col>
+              <Col
+                xs={12}
+                lg={12}
+                md={12}
+                className="mb-2"
+                style={{ paddingLeft: "100px", paddingRight: "100px" }}
+              >
+                <center>
+                  <Row xs={12} lg={12} md={12} sm={12}>
+                    <Col xs={12} lg={12} md={12} sm={12}>
+                      <div className="card mb-1">
+                        <div className="card-body d-flex justify-content-start">
+                          <h5>Berita Terkait</h5>
                         </div>
                       </div>
                     </Col>
-                  ))}
+                  </Row>
+                  <Row>
+                    {beritas.map((berita, index) => (
+                      <Col xs={12} lg={4} md={4} sm={12} key={index}>
+                        <div
+                          className="card"
+                          style={{
+                            borderRadius: 10,
+                            borderBlockEndColor: "#808080",
+                            borderBlockEndWidth: 5,
+                            borderRightWidth: 5,
+                            borderRightColor: "#808080",
+                          }}
+                        >
+                          <img
+                            src={
+                              import.meta.env.VITE_APP_BASEURL +
+                              "/" +
+                              berita.path
+                            }
+                            alt=""
+                            className="card-img-top"
+                          />
+                          <div className="card-body">
+                            <strong className="card-title d-flex justify-content-start">
+                              {berita.judul}
+                            </strong>
+                          </div>
+                        </div>
+                      </Col>
+                    ))}
+                  </Row>
+                </center>
+              </Col>
+            </Row>
+            <div
+              className="card"
+              style={{
+                backgroundColor: "#FFF",
+                padding: "20px",
+                marginBottom: "20px",
+              }}
+            >
+              <div className="card-header" style={{ backgroundColor: "white" }}>
+                <h2>
+                  <b> Fiturs</b>
+                </h2>
+              </div>
+              <div className="card-body">
+                <Row>
+                  <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                    <img
+                      src="./assets/img/text-geodiversity.png"
+                      alt=""
+                      width={"100%"}
+                    />
+                  </Col>
+                  <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                    <img
+                      src="./assets/img/text-culturdiversity.png"
+                      width={"100%"}
+                      alt=""
+                    />
+                  </Col>
+                  <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                    <img
+                      src="./assets/img/text-biodiversity.png"
+                      width={"100%"}
+                      alt=""
+                    />
+                  </Col>
+                  <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                    <img
+                      src="./assets/img/text-umkm.png"
+                      alt=""
+                      width={"100%"}
+                    />
+                  </Col>
+                  <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                    <img
+                      src="./assets/img/text-egd.png"
+                      width={"100%"}
+                      alt=""
+                    />
+                  </Col>
+                  <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
+                    <img
+                      src="./assets/img/text-kuliner.png"
+                      width={"100%"}
+                      alt=""
+                    />
+                  </Col>
                 </Row>
-              </center>
-            </Col>
-          </Row>
-          <div
-            className="card"
-            style={{
-              backgroundColor: "#FFF",
-              padding: "20px",
-              marginBottom: "20px",
-            }}
-          >
-            <div className="card-header" style={{ backgroundColor: "white" }}>
-              <h2>
-                <b> Fiturs</b>
-              </h2>
+              </div>
             </div>
-            <div className="card-body">
-              <Row>
-                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
-                  <img
-                    src="./assets/img/text-geodiversity.png"
-                    alt=""
-                    width={"100%"}
-                  />
-                </Col>
-                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
-                  <img
-                    src="./assets/img/text-culturdiversity.png"
-                    width={"100%"}
-                    alt=""
-                  />
-                </Col>
-                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
-                  <img
-                    src="./assets/img/text-biodiversity.png"
-                    width={"100%"}
-                    alt=""
-                  />
-                </Col>
-                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
-                  <img src="./assets/img/text-umkm.png" alt="" width={"100%"} />
-                </Col>
-                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
-                  <img src="./assets/img/text-egd.png" width={"100%"} alt="" />
-                </Col>
-                <Col xs={6} sm={6} md={4} lg={4} className="mt-2">
-                  <img
-                    src="./assets/img/text-kuliner.png"
-                    width={"100%"}
-                    alt=""
-                  />
-                </Col>
-              </Row>
-            </div>
-          </div>
-          <div className="bg-primary text-light card">
-            <div className="card-header">
-              <h4>Introduction</h4>
-            </div>
-            <div className="card-body">
-              <Row>
-                <Col xs={12} sm={12} md={5} lg={5} className="rounded">
-                  <img src="/assets/img/bg-home.png" alt="" width={"100%"} />
-                </Col>
-                <Col xs={12} sm={12} md={7} lg={7}>
-                  {/* <p></p> */}
-                  {showFullContent ? (
-                    <p>{konten}</p>
-                  ) : (
-                    <p>{konten.slice(0, 600)}...</p>
-                  )}
-                  <button
-                    onClick={toggleContent}
-                    className="btn btn-sm btn-light text-dark mb-2"
-                  >
-                    {showFullContent ? "Lebih Sedikit" : "Baca Selengkapnya"}
-                  </button>
-                </Col>
-                {/* <Col xs={0} sm={0} md={5} lg={5} className="rounded">
+            <div className="bg-primary text-light card">
+              <div className="card-header">
+                <h4>Introduction</h4>
+              </div>
+              <div className="card-body">
+                <Row>
+                  <Col xs={12} sm={12} md={5} lg={5} className="rounded">
+                    <img
+                      src="/assets/img/bg-home.png"
+                      alt=""
+                      width={"100%"}
+                      style={{ borderRadius: 50 }}
+                    />
+                  </Col>
+                  <Col xs={12} sm={12} md={7} lg={7}>
+                    {/* <p></p> */}
+                    {showFullContent ? (
+                      <p>{konten}</p>
+                    ) : (
+                      <p>{konten.slice(0, 600)}...</p>
+                    )}
+                    <button
+                      onClick={toggleContent}
+                      className="btn btn-sm btn-light text-dark mb-2"
+                    >
+                      {showFullContent ? "Lebih Sedikit" : "Baca Selengkapnya"}
+                    </button>
+                  </Col>
+                  {/* <Col xs={0} sm={0} md={5} lg={5} className="rounded">
                   <img src="/assets/img/bg-home.png" alt="" width={"100%"} />
                 </Col> */}
-              </Row>
+                </Row>
+              </div>
             </div>
           </div>
+          <div className="mt-100"></div>
+          <Footer />
         </div>
-        <div className="mt-100"></div>
-        <Footer />
       </LayoutWeb>
     </React.Fragment>
   );

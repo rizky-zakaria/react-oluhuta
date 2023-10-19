@@ -44,42 +44,48 @@ function DetailCulturdiversity() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <Row>
-            {culturdiversitys.map((cul, index) => (
+        <div style={{ backgroundColor: "#FFF" }}>
+          <div className="container mt-100">
+            <Row>
+              {/* {culturdiversitys.map((cul, index) => ( */}
               <Col xs={12} lg={8} sm={12} md={8} key={index}>
                 <div className="card">
                   <div className="card-body">
                     <img
-                      src={import.meta.env.VITE_APP_BASEURL + "/" + cul.path}
+                      src={
+                        import.meta.env.VITE_APP_BASEURL +
+                        "/" +
+                        culturdiversity.path
+                      }
                       className="card-img-top"
                       alt=""
                     />
-                    <h5 className="mb-3">{cul.judul}</h5>
-                    {cul.isi.replace(regex, "")}
+                    <h5 className="mb-3">{culturdiversity.judul}</h5>
+                    {culturdiversity.isi.replace(regex, "")}
                   </div>
                 </div>
               </Col>
-            ))}
-            <Col xs={12} lg={4} sm={12} md={4}>
-              {culturdiversitys.map((cul, index) => (
-                <div className="card mb-3" key={index}>
-                  <div className="card-body">
-                    <img
-                      src={import.meta.env.VITE_APP_BASEURL + "/" + cul.path}
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <a href="">
-                      <h5>{cul.judul}</h5>
-                    </a>
+              {/* ))} */}
+              <Col xs={12} lg={4} sm={12} md={4}>
+                {culturdiversitys.map((cul, index) => (
+                  <div className="card mb-3" key={index}>
+                    <div className="card-body">
+                      <img
+                        src={import.meta.env.VITE_APP_BASEURL + "/" + cul.path}
+                        className="card-img-top"
+                        alt=""
+                      />
+                      <a href="">
+                        <h5>{cul.judul}</h5>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </Col>
-          </Row>
+                ))}
+              </Col>
+            </Row>
+          </div>
+          <div className="mt-100" style={{ backgroundColor: "#FFF" }}></div>
         </div>
-        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

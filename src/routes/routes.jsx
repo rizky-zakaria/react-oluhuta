@@ -23,14 +23,25 @@ import DetailItemKuliner from "../pages/Kuliner/DetailItemKuliner";
 import CheckoutEkonomiCreative from "../pages/EkonomiCreative/Checkout";
 import CheckoutRental from "../pages/Rental/Checkout";
 import Checkout from "../pages/Checkout/Checkout";
+import Profile from "../pages/Profile/Index";
+import Register from "../pages/web/Register/Register";
 
 function RoutesIndex() {
   return (
     <Routes>
       <Route path="/user/login" element={<Login />} />
+      <Route path="/user/register" element={<Register />} />
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
+      <Route
+        path="/user/profile"
+        element={
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        }
+      />
       <Route
         path="/user/geodiversity"
         element={

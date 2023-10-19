@@ -32,25 +32,30 @@ function Biodiversity() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <Row>
-            {biodiversitys.map((bio, index) => (
-              <Col xs={12} lg={4} sm={12} md={4}>
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <img
-                      src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <a href={"/user/biodiversity/" + bio.id}>
-                      <h5>{bio.judul}</h5>
-                    </a>
+        <div style={{ backgroundColor: "#FFF" }}>
+          <div className="container mt-100">
+            <Row>
+              {biodiversitys.map((bio, index) => (
+                <Col xs={12} lg={4} sm={12} md={4}>
+                  <div className="card mb-3">
+                    <div className="card-body">
+                      <img
+                        src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
+                        className="card-img-top"
+                        alt=""
+                      />
+                      <a href={"/user/biodiversity/" + bio.id}>
+                        <h5>{bio.judul}</h5>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
+                </Col>
+              ))}
+            </Row>
+          </div>
+          <div style={{ backgroundColor: "#FFF" }} className="mt-100">
+            _
+          </div>
         </div>
       </LayoutWeb>
     </React.Fragment>

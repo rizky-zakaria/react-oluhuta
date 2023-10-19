@@ -8,11 +8,12 @@ import Cookies from "js-cookie";
 
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Register() {
   document.title = "Login - Administrator Travel GIS";
 
   const navigate = useNavigate();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,7 +27,8 @@ function Login() {
     //set state isLoading to "true"
     setLoading(true);
 
-    await Api.post("/api/client/login", {
+    await Api.post("/api/client/register", {
+      name: name,
       email: email,
       password: password,
     })
@@ -34,7 +36,7 @@ function Login() {
         //set state isLoading to "false"
         setLoading(false);
 
-        toast.success("Login Successfully.", {
+        toast.success("Register Successfully.", {
           duration: 4000,
           position: "top-right",
           style: {
@@ -44,9 +46,7 @@ function Login() {
           },
         });
 
-        Cookies.set("token", response.data.token);
-
-        navigate("/");
+        navigate("/user/login");
       })
       .catch((error) => {
         setLoading(false);
@@ -58,15 +58,15 @@ function Login() {
     return navigate("/");
   }
 
-  const register = () => {
-    navigate("/user/register");
+  const login = () => {
+    navigate("/user/login");
   };
 
   return (
     <React.Fragment>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-4 mt-150">
+          <div className="col-md-4 mt-100">
             <div className="text-center mb-4">
               <h4>
                 <i className="fa fa-map-marked-alt"></i>{" "}
@@ -83,6 +83,25 @@ function Login() {
                   <div className="alert alert-danger">{validation.message}</div>
                 )}
                 <form onSubmit={loginHandler}>
+                  <label className="mb-1">NAMA</label>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text">
+                      <i className="fa fa-user"></i>
+                    </span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Nama"
+                    />
+                  </div>
+                  {validation.name && (
+                    <div className="alert alert-danger">
+                      {validation.name[0]}
+                    </div>
+                  )}
+
                   <label className="mb-1">EMAIL ADDRESS</label>
                   <div className="input-group mb-3">
                     <span className="input-group-text">
@@ -127,14 +146,14 @@ function Login() {
                     disabled={isLoading}
                   >
                     {" "}
-                    {isLoading ? "LOADING..." : "LOGIN"}{" "}
+                    {isLoading ? "LOADING..." : "REGISTER"}{" "}
                   </button>
                   <button
                     className="btn btn-primary mt-3 shadow-sm rounded-sm px-4 w-100"
                     disabled={isLoading}
-                    onClick={register}
+                    onClick={login}
                   >
-                    {isLoading ? "LOADING..." : "REGISTER"}{" "}
+                    {isLoading ? "LOADING..." : "LOGIN"}{" "}
                   </button>
                 </form>
               </div>
@@ -146,4 +165,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

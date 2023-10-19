@@ -32,16 +32,14 @@ function WebHeader() {
   //token
   const token = Cookies.get("token");
 
-  
-
   //function "fetchDataUser"
   const fetchDataUser = async () => {
     //fetching Rest API "user"
     await Api.get("/api/admin/user", {
       headers: {
         //header Bearer + Token
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     }).then((response) => {
       //set data to state
       setUser(response.data);
@@ -50,7 +48,6 @@ function WebHeader() {
 
   //hook
   useEffect(() => {
-
     //if token already exists
     if (token) {
       //call function "fetchDataUser"
@@ -105,7 +102,7 @@ function WebHeader() {
               </Nav.Link>
               {token ? (
                 <Link
-                  to="/admin/dashboard"
+                  to="/user/profile"
                   className="btn btn-md btn-light text-uppercase"
                 >
                   <i className="fa fa-user-circle"></i> {user.name}
@@ -115,20 +112,20 @@ function WebHeader() {
                   as={Link}
                   to="/user/login"
                   className="fw-bold text-white"
-                >SIGN UP
+                >
+                  SIGN UP
                 </Nav.Link>
-                
               )}
               {token ? (
-                ''
+                ""
               ) : (
                 <Nav.Link
                   as={Link}
                   to="/user/login"
                   className="fw-bold text-white"
-                >LOGIN
+                >
+                  LOGIN
                 </Nav.Link>
-                
               )}
             </Nav>
           </Navbar.Collapse>

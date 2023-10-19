@@ -39,7 +39,7 @@ function Kuliner() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
+        <div style={{ backgroundColor: "#FFF" }}>
           <Image
             src="/assets/img/header-makanan.png"
             xs={12}
@@ -47,10 +47,11 @@ function Kuliner() {
             sm={12}
             md={12}
             width={"100%"}
-            className="mb-5"
+            className="mb-5 mt-100"
           />
-          <Row>
-            {/* <Col xs={12} lg={12} sm={12} md={12} className="mb-5">
+          <div className="container">
+            <Row>
+              {/* <Col xs={12} lg={12} sm={12} md={12} className="mb-5">
               <div className="card">
                 <div className="card-body d-flex justify-content-between">
                   <h5> Lapak Sewa Barang</h5>
@@ -71,51 +72,65 @@ function Kuliner() {
                 </div>
               </div>
             </Col> */}
-            {merchants.map((merchant, index) => (
-              <Col xs={12} lg={4} sm={12} md={4} key={index}>
-                <a href={"/user/kuliner/" + merchant.id} style={linkStyle}>
-                  <div className="card mb-3">
-                    <div className="card-body">
-                      <img
-                        src={
-                          import.meta.env.VITE_APP_BASEURL + "/" + merchant.path
-                        }
-                        className="card-img-top"
-                        alt=""
-                      />
-                      <div className="card-footer mt-2">
-                        <div className="row">
-                          <div className="col-12">
-                            <h5 className="mt-2">{merchant.product}</h5>
-                            <span>
-                              {merchant.deskripsi} <br />
-                            </span>
-                            <a
-                              href={"https://wa.me/" + merchant.phone}
-                              style={{ padding: "10px" }}
-                              target="__blank"
-                              className="btn btn-sm btn-success d-flex justify-content-start"
-                            >
-                              <img
-                                src="../assets/img/wa.png"
-                                alt=""
-                                width={"7%"}
-                              />
-                              <span style={{ marginLeft: "10px" }}>
-                                Pesan Sekarang
+              {merchants.map((merchant, index) => (
+                <Col xs={12} lg={4} sm={12} md={4} key={index}>
+                  <a href={"/user/kuliner/" + merchant.id} style={linkStyle}>
+                    <div
+                      className="card mb-3"
+                      style={{
+                        borderRadius: 10,
+                        borderBlockEndColor: "#808080",
+                        borderBlockEndWidth: 5,
+                        borderRightWidth: 5,
+                        borderRightColor: "#808080",
+                      }}
+                    >
+                      <div className="card-body">
+                        <img
+                          src={
+                            import.meta.env.VITE_APP_BASEURL +
+                            "/" +
+                            merchant.path
+                          }
+                          className="card-img-top"
+                          alt=""
+                        />
+                        <div className="card-footer mt-2">
+                          <div className="row">
+                            <div className="col-12">
+                              <h5 className="mt-2">{merchant.product}</h5>
+                              <span>
+                                {merchant.deskripsi} <br />
                               </span>
-                            </a>
+                              <a
+                                href={"https://wa.me/" + merchant.phone}
+                                style={{ padding: "10px" }}
+                                target="__blank"
+                                className="btn btn-sm btn-success d-flex justify-content-start"
+                              >
+                                <img
+                                  src="../assets/img/wa.png"
+                                  alt=""
+                                  width={"7%"}
+                                />
+                                <span style={{ marginLeft: "10px" }}>
+                                  Pesan Sekarang
+                                </span>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </a>
-              </Col>
-            ))}
-          </Row>
+                  </a>
+                </Col>
+              ))}
+            </Row>
+          </div>
+          <div className="mt-100" style={{ backgroundColor: "#FFF" }}>
+            _
+          </div>
         </div>
-        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

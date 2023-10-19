@@ -74,54 +74,60 @@ function DetailItemEkonomiCreative() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <Row>
-            <Col xs={12} lg={8} sm={12} md={8}>
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    src={import.meta.env.VITE_APP_BASEURL + "/" + products.path}
-                    className="card-img-top"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </Col>
-            <Col xs={12} lg={4} sm={12} md={4}>
-              <div className="card mb-3">
-                <div className="card-body">
-                  <strong>
-                    {products.product} <br />
-                    {products.harga}
-                  </strong>
-                  <form onSubmit={storeCategory} className="mt-2">
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={qty}
-                      onChange={(e) => setQty(e.target.value)}
-                      placeholder="Enter Category Name"
-                      required
+        <div style={{ backgroundColor: "#FFF" }}>
+          <div className="container mt-100">
+            <Row>
+              <Col xs={12} lg={8} sm={12} md={8}>
+                <div className="card">
+                  <div className="card-body">
+                    <img
+                      src={
+                        import.meta.env.VITE_APP_BASEURL + "/" + products.path
+                      }
+                      className="card-img-top"
+                      alt=""
                     />
-                    {validation.qty && (
-                      <div className="alert alert-danger">
-                        {validation.qty[0]}
-                      </div>
-                    )}
-
-                    <button
-                      type="submit"
-                      className="btn btn-sm btn-success mt-1"
-                    >
-                      Pesan Sekarang
-                    </button>
-                  </form>
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
+              </Col>
+              <Col xs={12} lg={4} sm={12} md={4}>
+                <div className="card mb-3">
+                  <div className="card-body">
+                    <strong>
+                      {products.product} <br />
+                      {products.harga}
+                    </strong>
+                    <form onSubmit={storeCategory} className="mt-2">
+                      <input
+                        type="number"
+                        className="form-control"
+                        value={qty}
+                        onChange={(e) => setQty(e.target.value)}
+                        placeholder="Enter Category Name"
+                        required
+                      />
+                      {validation.qty && (
+                        <div className="alert alert-danger">
+                          {validation.qty[0]}
+                        </div>
+                      )}
+
+                      <button
+                        type="submit"
+                        className="btn btn-sm btn-success mt-1"
+                      >
+                        Pesan Sekarang
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div className="mt-100" style={{ backgroundColor: "#FFF" }}>
+            _
+          </div>
         </div>
-        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

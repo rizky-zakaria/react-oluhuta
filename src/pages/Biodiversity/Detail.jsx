@@ -46,42 +46,48 @@ function DetailBiodiversity() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <Row>
-            <Col xs={12} lg={8} sm={12} md={8}>
-              <div className="card">
-                <div className="card-body">
-                  <img
-                    src={
-                      import.meta.env.VITE_APP_BASEURL + "/" + biodiversity.path
-                    }
-                    className="card-img-top"
-                    alt=""
-                  />
-                  <h5 className="mb-3">{biodiversity.judul}</h5>
-                  {biodiversity.isi.replace(regex, "")}
-                </div>
-              </div>
-            </Col>
-            <Col xs={12} lg={4} sm={12} md={4}>
-              {biodiversitys.map((bio, index) => (
-                <div className="card mb-3">
+        <div style={{ backgroundColor: "#FFF" }}>
+          <div className="container mt-100">
+            <Row>
+              <Col xs={12} lg={8} sm={12} md={8}>
+                <div className="card">
                   <div className="card-body">
                     <img
-                      src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
+                      src={
+                        import.meta.env.VITE_APP_BASEURL +
+                        "/" +
+                        biodiversity.path
+                      }
                       className="card-img-top"
                       alt=""
                     />
-                    <a href={"/user/biodiversity/" + bio.id}>
-                      <h5>{bio.judul}</h5>
-                    </a>
+                    <h5 className="mb-3">{biodiversity.judul}</h5>
+                    {biodiversity.isi.replace(regex, "")}
                   </div>
                 </div>
-              ))}
-            </Col>
-          </Row>
+              </Col>
+              <Col xs={12} lg={4} sm={12} md={4}>
+                {biodiversitys.map((bio, index) => (
+                  <div className="card mb-3">
+                    <div className="card-body">
+                      <img
+                        src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
+                        className="card-img-top"
+                        alt=""
+                      />
+                      <a href={"/user/biodiversity/" + bio.id}>
+                        <h5>{bio.judul}</h5>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </Col>
+            </Row>
+          </div>
+          <div className="mt-100" style={{ backgroundColor: "#FFF" }}>
+            _
+          </div>
         </div>
-        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

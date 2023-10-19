@@ -59,23 +59,27 @@ function Scanner() {
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div className="container mt-100">
-          <center>
-            <div className="App">
-              <h1>Scan Kunjungan</h1>
-              {scanResult === null ? (
-                <div id="reader"></div>
-              ) : (
-                <div>
-                  <a href={scanResult + user.id} className="btn btn-success">
-                    Tandai Kunjungan
-                  </a>
-                </div>
-              )}
-            </div>
-          </center>
+        <div style={{ backgroundColor: "#FFF" }}>
+          <div className="container mt-100">
+            <center>
+              <div className="App">
+                <h1>Scan Kunjungan</h1>
+                {scanResult === null ? (
+                  <div id="reader"></div>
+                ) : (
+                  <div>
+                    <a href={scanResult + user.id} className="btn btn-success">
+                      Tandai Kunjungan
+                    </a>
+                  </div>
+                )}
+              </div>
+            </center>
+          </div>
+          <div className="mt-100" style={{ backgroundColor: "#FFF" }}>
+            _
+          </div>
         </div>
-        <div className="mt-100"></div>
       </LayoutWeb>
     </React.Fragment>
   );

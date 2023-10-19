@@ -46,7 +46,16 @@ function DetailEkonomiCreative() {
                   href={"/user/ekonomi-creative/item/" + product.id}
                   style={linkStyle}
                 >
-                  <div className="card mb-3">
+                  <div
+                    className="card mb-3"
+                    style={{
+                      borderRadius: 10,
+                      borderBlockEndColor: "#808080",
+                      borderBlockEndWidth: 5,
+                      borderRightWidth: 5,
+                      borderRightColor: "#808080",
+                    }}
+                  >
                     <div className="card-body">
                       <img
                         src={
@@ -64,7 +73,9 @@ function DetailEkonomiCreative() {
             ))}
           </Row>
         </div>
-        <div className="mt-100"></div>
+        <div className="mt-100" style={{ backgroundColor: "#FFF" }}>
+          _
+        </div>
       </LayoutWeb>
     </React.Fragment>
   );
