@@ -16,7 +16,7 @@ function Kuliner() {
   const token = Cookies.get("token");
 
   const fetchData = async () => {
-    await Api.get("/api/client/product", {
+    await Api.get("/api/client/kuliner", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -24,7 +24,7 @@ function Kuliner() {
       setMerchants(response.data.data);
     });
   };
-
+  const regex = /(<([^>]+)>)/gi;
   useEffect(() => {
     fetchData();
   }, []);
@@ -100,7 +100,7 @@ function Kuliner() {
                             <div className="col-12">
                               <h5 className="mt-2">{merchant.product}</h5>
                               <span>
-                                {merchant.deskripsi} <br />
+                                {merchant.deskripsi.replace(regex, "")} <br />
                               </span>
                               <a
                                 href={"https://wa.me/" + merchant.phone}
