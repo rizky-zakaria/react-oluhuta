@@ -96,6 +96,7 @@ function EkonomiCreative() {
                           }
                           className="card-img-top"
                           alt=""
+                          style={{ width: 310, height: 310 }}
                         />
                         <div className="card-footer mt-2">
                           <div className="row">
