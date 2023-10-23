@@ -43,6 +43,7 @@ function Biodiversity() {
                         src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
                         className="card-img-top"
                         alt=""
+                        style={{ width: 310, height: 310 }}
                       />
                       <a href={"/user/biodiversity/" + bio.id}>
                         <h5>{bio.judul}</h5>

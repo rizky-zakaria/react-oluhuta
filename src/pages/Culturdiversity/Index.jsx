@@ -46,6 +46,7 @@ function Culturdiversity() {
                         }
                         className="card-img-top"
                         alt=""
+                        style={{ width: 310, height: 310 }}
                       />
                       <a href={"/user/culturdiversity/" + culturdiversity.id}>
                         <h5>{culturdiversity.judul}</h5>

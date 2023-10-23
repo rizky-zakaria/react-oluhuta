@@ -46,6 +46,7 @@ function Geodiversity() {
                         }
                         className="card-img-top"
                         alt=""
+                        style={{ width: 310, height: 310 }}
                       />
                       <a href={"/user/geodiversity/" + geodiversity.id}>
                         <h5>{geodiversity.judul}</h5>
