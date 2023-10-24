@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
 import "../../assets/css/text-justify.css";
+import "../../assets/css/style-content.css";
 import Api from "../../api";
 import Cookies from "js-cookie";
 
@@ -35,8 +36,15 @@ function Geodiversity() {
           <div className="container mt-100">
             <Row>
               {geodiversitys.map((geodiversity, index) => (
-                <Col xs={12} lg={4} sm={12} md={4} key={index}>
-                  <div className="card mb-3">
+                <Col
+                  xs={12}
+                  lg={4}
+                  sm={12}
+                  md={4}
+                  key={index}
+                  style={{ marginTop: 50 }}
+                >
+                  {/* <div className="card mb-3">
                     <div className="card-body">
                       <img
                         src={
@@ -48,6 +56,23 @@ function Geodiversity() {
                         alt=""
                         style={{ width: 310, height: 310 }}
                       />
+                      <a href={"/user/geodiversity/" + geodiversity.id}>
+                        <h5>{geodiversity.judul}</h5>
+                      </a>
+                    </div>
+                  </div> */}
+
+                  <div
+                    className="news-container"
+                    style={{
+                      backgroundImage: `url(${
+                        import.meta.env.VITE_APP_BASEURL +
+                        "/" +
+                        geodiversity.path
+                      })`,
+                    }}
+                  >
+                    <div className="news-content">
                       <a href={"/user/geodiversity/" + geodiversity.id}>
                         <h5>{geodiversity.judul}</h5>
                       </a>

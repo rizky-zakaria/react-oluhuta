@@ -13,6 +13,7 @@ import "../../../assets/css/aboveSlider.css";
 import Api from "../../../api";
 import Cookies from "js-cookie";
 import Slider from "../../../components/web/Slider";
+import "../../../assets/css/style-content.css";
 
 function Home() {
   document.title =
@@ -174,8 +175,8 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                   <Row>
                     {beritas.map((berita, index) => (
                       <Col xs={12} lg={4} md={4} sm={12} key={index}>
-                        <div
-                          className="card"
+                        {/* <div
+                          className="card card-img"
                           style={{
                             borderRadius: 10,
                             borderBlockEndColor: "#808080",
@@ -198,6 +199,21 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                             <strong className="card-title d-flex justify-content-start">
                               {berita.judul}
                             </strong>
+                          </div>
+                        </div> */}
+
+                        <div
+                          className="news-container"
+                          style={{
+                            backgroundImage: `url(${
+                              import.meta.env.VITE_APP_BASEURL +
+                              "/" +
+                              berita.path
+                            })`,
+                          }}
+                        >
+                          <div className="news-content">
+                            <h3>{berita.judul}</h3>
                           </div>
                         </div>
                       </Col>

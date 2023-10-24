@@ -5,6 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import LayoutWeb from "../../layouts/Web";
 import "../../assets/css/text-justify.css";
 import Api from "../../api";
+import "../../assets/css/style-content.css";
 import Cookies from "js-cookie";
 
 function Biodiversity() {
@@ -27,7 +28,16 @@ function Biodiversity() {
 
   useEffect(() => {
     fetchData();
+    cek();
   }, []);
+
+  // const cek = () => {
+  //   if (Array.isArray(biodiversitys)) {
+  //     biodiversitys.map((item) => {
+  //       console.log(item);
+  //     });
+  //   }
+  // };
 
   return (
     <React.Fragment>
@@ -35,23 +45,34 @@ function Biodiversity() {
         <div style={{ backgroundColor: "#FFF" }}>
           <div className="container mt-100">
             <Row>
-              {biodiversitys.map((bio, index) => (
-                <Col xs={12} lg={4} sm={12} md={4}>
-                  <div className="card mb-3">
-                    <div className="card-body">
-                      <img
-                        src={import.meta.env.VITE_APP_BASEURL + "/" + bio.path}
-                        className="card-img-top"
-                        alt=""
-                        style={{ width: 310, height: 310 }}
-                      />
-                      <a href={"/user/biodiversity/" + bio.id}>
-                        <h5>{bio.judul}</h5>
+              {/* {biodiversitys.map(bio => console.log(bio.judul))} */}
+              {/* {console.log(typeof biodiversitys.data)}
+              {console.log(biodiversitys)} */}
+              {/* {if () {
+                
+              } else {
+                
+              }} */}
+              {/* {biodiversitys.map((biodiversity, index) => (
+                <Col xs={12} lg={4} sm={12} md={4} style={{ marginTop: 50 }}>
+                  <div
+                    className="news-container"
+                    style={{
+                      backgroundImage: `url(${
+                        import.meta.env.VITE_APP_BASEURL +
+                        "/" +
+                        biodiversity.path
+                      })`,
+                    }}
+                  >
+                    <div className="news-content">
+                      <a href={"/user/biodiversity/" + biodiversity.id}>
+                        <h5>{biodiversity.judul}</h5>
                       </a>
                     </div>
                   </div>
                 </Col>
-              ))}
+              ))} */}
             </Row>
           </div>
           <div style={{ backgroundColor: "#FFF" }} className="mt-100">
