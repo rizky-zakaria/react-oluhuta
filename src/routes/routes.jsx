@@ -25,6 +25,7 @@ import CheckoutRental from "../pages/Rental/Checkout";
 import Checkout from "../pages/Checkout/Checkout";
 import Profile from "../pages/Profile/Index";
 import Register from "../pages/web/Register/Register";
+import DetailBerita from "../pages/web/Home/Detail";
 
 function RoutesIndex() {
   return (
@@ -34,6 +35,7 @@ function RoutesIndex() {
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
+      <Route path="/berita/:id" element={<DetailBerita />} />
       <Route
         path="/user/profile"
         element={

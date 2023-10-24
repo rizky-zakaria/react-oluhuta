@@ -174,34 +174,14 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                   </Row>
                   <Row>
                     {beritas.map((berita, index) => (
-                      <Col xs={12} lg={4} md={4} sm={12} key={index}>
-                        {/* <div
-                          className="card card-img"
-                          style={{
-                            borderRadius: 10,
-                            borderBlockEndColor: "#808080",
-                            borderBlockEndWidth: 5,
-                            borderRightWidth: 5,
-                            borderRightColor: "#808080",
-                          }}
-                        >
-                          <img
-                            src={
-                              import.meta.env.VITE_APP_BASEURL +
-                              "/" +
-                              berita.path
-                            }
-                            alt=""
-                            className="card-img-top"
-                            style={{ width: 310, height: 310 }}
-                          />
-                          <div className="card-body">
-                            <strong className="card-title d-flex justify-content-start">
-                              {berita.judul}
-                            </strong>
-                          </div>
-                        </div> */}
-
+                      <Col
+                        xs={12}
+                        lg={4}
+                        md={4}
+                        sm={12}
+                        key={index}
+                        style={{ marginTop: 10 }}
+                      >
                         <div
                           className="news-container"
                           style={{
@@ -213,7 +193,9 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                           }}
                         >
                           <div className="news-content">
-                            <h3>{berita.judul}</h3>
+                            <a href={"/berita/" + berita.id}>
+                              <h3>{berita.judul}</h3>
+                            </a>
                           </div>
                         </div>
                       </Col>
