@@ -194,7 +194,7 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                         >
                           <div className="news-content">
                             <a href={"/berita/" + berita.id}>
-                              <h3>{berita.judul}</h3>
+                              <h4>{berita.judul.slice(0, 50)}</h4>
                             </a>
                           </div>
                         </div>

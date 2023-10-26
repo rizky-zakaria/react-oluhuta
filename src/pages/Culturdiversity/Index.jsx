@@ -73,7 +73,7 @@ function Culturdiversity() {
                   >
                     <div className="news-content">
                       <a href={"/user/culturdiversity/" + culturdiversity.id}>
-                        <h5>{culturdiversity.judul}</h5>
+                        <h5>{culturdiversity.judul.slice(0, 50)}</h5>
                       </a>
                     </div>
                   </div>

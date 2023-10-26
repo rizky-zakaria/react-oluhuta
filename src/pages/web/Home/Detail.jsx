@@ -33,10 +33,11 @@ function DetailBerita() {
       },
     }).then((response) => {
       setBerita(response.data.data);
+      console.log(response.data.data);
     });
   };
 
-  const regex = /(<([^>]+)>)/gi;
+  const regex = /<\/?[^>]+(>|$)/g;
   useEffect(() => {
     fetchData();
     fetchDataDetail();

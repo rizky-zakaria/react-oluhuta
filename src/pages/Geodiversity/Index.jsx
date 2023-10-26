@@ -74,7 +74,7 @@ function Geodiversity() {
                   >
                     <div className="news-content">
                       <a href={"/user/geodiversity/" + geodiversity.id}>
-                        <h5>{geodiversity.judul}</h5>
+                        <h5>{geodiversity.judul.slice(0, 50)}</h5>
                       </a>
                     </div>
                   </div>
