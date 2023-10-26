@@ -36,7 +36,7 @@ function DetailCulturdiversity() {
     });
   };
 
-  const regex = /(<([^>]+)>)/gi;
+  const regex = /<\/?[^>]+(>|$)/g;
   useEffect(() => {
     fetchData();
     fetchDataDetail();

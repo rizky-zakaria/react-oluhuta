@@ -36,7 +36,7 @@ function DetailGeodiversity() {
     });
   };
 
-  const regex = /(<([^>]+)>)/gi;
+  const regex = /<\/?[^>]+(>|$)/g;
   useEffect(() => {
     fetchData();
     fetchDataDetail();

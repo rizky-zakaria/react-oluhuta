@@ -37,7 +37,7 @@ function DetailBiodiversity() {
     });
   };
 
-  const regex = /(<([^>]+)>)/gi;
+  const regex = /<\/?[^>]+(>|$)/g;
   useEffect(() => {
     fetchData();
     fetchDataDetail();
