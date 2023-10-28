@@ -114,7 +114,7 @@ function DetailItemEkonomiCreative() {
 
                       <button
                         type="submit"
-                        className="btn btn-sm btn-success mt-1"
+                        className="btn btn-sm btn-success mt-1 w-100"
                       >
                         Pesan Sekarang
                       </button>
