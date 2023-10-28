@@ -38,6 +38,7 @@ function DetailBerita() {
   };
 
   const regex = /<\/?[^>]+(>|$)/g;
+  // console.log(berita.isi.replace(regex, ""));
   useEffect(() => {
     fetchData();
     fetchDataDetail();
@@ -57,7 +58,12 @@ function DetailBerita() {
                       alt=""
                     />
                     <h5 className="mb-3">{berita.judul}</h5>
-                    {berita.isi.replace(regex, "")}
+                    {/* {berita.isi.replace(regex, "")} */}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: berita.isi,
+                      }}
+                    ></span>
                   </div>
                 </div>
               </Col>

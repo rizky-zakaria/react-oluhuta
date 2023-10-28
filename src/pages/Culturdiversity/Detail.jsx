@@ -48,7 +48,7 @@ function DetailCulturdiversity() {
           <div className="container mt-100">
             <Row>
               {/* {culturdiversitys.map((cul, index) => ( */}
-              <Col xs={12} lg={8} sm={12} md={8} key={index}>
+              <Col xs={12} lg={8} sm={12} md={8}>
                 <div className="card">
                   <div className="card-body">
                     <img
@@ -61,7 +61,11 @@ function DetailCulturdiversity() {
                       alt=""
                     />
                     <h5 className="mb-3">{culturdiversity.judul}</h5>
-                    {culturdiversity.isi.replace(regex, "")}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: culturdiversity.isi,
+                      }}
+                    ></span>
                   </div>
                 </div>
               </Col>

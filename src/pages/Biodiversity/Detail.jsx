@@ -62,7 +62,11 @@ function DetailBiodiversity() {
                       alt=""
                     />
                     <h5 className="mb-3">{biodiversity.judul}</h5>
-                    {biodiversity.isi.replace(regex, "")}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: biodiversity.isi,
+                      }}
+                    ></span>
                   </div>
                 </div>
               </Col>

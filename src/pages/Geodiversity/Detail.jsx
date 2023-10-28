@@ -61,7 +61,11 @@ function DetailGeodiversity() {
                       alt=""
                     />
                     <h5 className="mb-3">{geodiversity.judul}</h5>
-                    {geodiversity.isi.replace(regex, "")}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: geodiversity.isi,
+                      }}
+                    ></span>
                   </div>
                 </div>
               </Col>
