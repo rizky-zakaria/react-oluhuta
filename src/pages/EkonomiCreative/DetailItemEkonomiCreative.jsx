@@ -87,6 +87,11 @@ function DetailItemEkonomiCreative() {
                       className="card-img-top"
                       alt=""
                     />
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: products.deskripsi,
+                      }}
+                    ></span>
                   </div>
                 </div>
               </Col>
