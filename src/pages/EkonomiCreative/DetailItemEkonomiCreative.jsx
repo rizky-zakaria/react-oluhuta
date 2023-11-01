@@ -108,7 +108,7 @@ function DetailItemEkonomiCreative() {
                         className="form-control"
                         value={qty}
                         onChange={(e) => setQty(e.target.value)}
-                        placeholder="Enter Category Name"
+                        placeholder="Jumlah Pesanan"
                         required
                       />
                       {validation.qty && (
