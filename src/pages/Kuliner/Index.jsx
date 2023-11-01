@@ -106,7 +106,11 @@ function Kuliner() {
                               <br />
                             </span>
                             <a
-                              href={"https://wa.me/" + merchant.phone}
+                              href={
+                                "https://wa.me/" +
+                                merchant.phone +
+                                "?text=Silahkan%20Pesan%20Makan%20Yang%20Kamu%20Suka"
+                              }
                               style={{ padding: "10px" }}
                               target="__blank"
                               className="btn btn-sm btn-success d-flex justify-content-start"
