@@ -74,60 +74,58 @@ function Kuliner() {
             </Col> */}
               {merchants.map((merchant, index) => (
                 <Col xs={12} lg={4} sm={12} md={4} key={index}>
-                  <a href={"/user/kuliner/" + merchant.id} style={linkStyle}>
-                    <div
-                      className="card mb-3"
-                      style={{
-                        borderRadius: 10,
-                        borderBlockEndColor: "#808080",
-                        borderBlockEndWidth: 5,
-                        borderRightWidth: 5,
-                        borderRightColor: "#808080",
-                      }}
-                    >
-                      <div className="card-body">
-                        <img
-                          src={
-                            import.meta.env.VITE_APP_BASEURL +
-                            "/" +
-                            merchant.path
-                          }
-                          className="card-img-top"
-                          alt=""
-                          style={{ width: 310, height: 310 }}
-                        />
-                        <div className="card-footer mt-2">
-                          <div className="row">
-                            <div className="col-12">
-                              <h5 className="mt-2">{merchant.product}</h5>
-                              <span>
-                                {merchant.deskripsi
-                                  .replace(regex, "")
-                                  .slice(0, 50)}
-                                {"..."}
-                                <br />
+                  {/* <a href={"/user/kuliner/" + merchant.id} style={linkStyle}> */}
+                  <div
+                    className="card mb-3"
+                    style={{
+                      borderRadius: 10,
+                      borderBlockEndColor: "#808080",
+                      borderBlockEndWidth: 5,
+                      borderRightWidth: 5,
+                      borderRightColor: "#808080",
+                    }}
+                  >
+                    <div className="card-body">
+                      <img
+                        src={
+                          import.meta.env.VITE_APP_BASEURL + "/" + merchant.path
+                        }
+                        className="card-img-top"
+                        alt=""
+                        style={{ width: 310, height: 310 }}
+                      />
+                      <div className="card-footer mt-2">
+                        <div className="row">
+                          <div className="col-12">
+                            <h5 className="mt-2">{merchant.product}</h5>
+                            <span>
+                              {merchant.deskripsi
+                                .replace(regex, "")
+                                .slice(0, 50)}
+                              {"..."}
+                              <br />
+                            </span>
+                            <a
+                              href={"https://wa.me/" + merchant.phone}
+                              style={{ padding: "10px" }}
+                              target="__blank"
+                              className="btn btn-sm btn-success d-flex justify-content-start"
+                            >
+                              <img
+                                src="../assets/img/wa.png"
+                                alt=""
+                                width={"7%"}
+                              />
+                              <span style={{ marginLeft: "10px" }}>
+                                Pesan Sekarang
                               </span>
-                              <a
-                                href={"https://wa.me/" + merchant.phone}
-                                style={{ padding: "10px" }}
-                                target="__blank"
-                                className="btn btn-sm btn-success d-flex justify-content-start"
-                              >
-                                <img
-                                  src="../assets/img/wa.png"
-                                  alt=""
-                                  width={"7%"}
-                                />
-                                <span style={{ marginLeft: "10px" }}>
-                                  Pesan Sekarang
-                                </span>
-                              </a>
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </div>
+                  {/* </a> */}
                 </Col>
               ))}
             </Row>
