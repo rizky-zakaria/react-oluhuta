@@ -76,7 +76,7 @@ function DetailBerita() {
                         className="card-img-top"
                         alt=""
                       />
-                      <a href="">
+                      <a href={"/berita/" + b.id}>
                         <h5>{b.judul}</h5>
                       </a>
                     </div>
