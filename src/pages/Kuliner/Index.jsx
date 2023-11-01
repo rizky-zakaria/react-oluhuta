@@ -100,12 +100,12 @@ function Kuliner() {
                           <div className="row">
                             <div className="col-12">
                               <h5 className="mt-2">{merchant.product}</h5>
-                              <span
-                                dangerouslySetInnerHTML={{
-                                  __html: merchant.deskripsi.slice(0, 20),
-                                }}
-                              >
-                                <br />{" "}
+                              <span>
+                                {merchant.deskripsi
+                                  .replace(regex, "")
+                                  .slice(0, 50)}
+                                {"..."}
+                                <br />
                               </span>
                               <a
                                 href={"https://wa.me/" + merchant.phone}
