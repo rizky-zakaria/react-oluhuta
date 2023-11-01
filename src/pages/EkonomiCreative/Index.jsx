@@ -105,7 +105,7 @@ function EkonomiCreative() {
                             </div>
                             <div className="col-11">
                               <h5 className="mt-2">{merchant.nama}</h5>
-                              <span>{merchant.deskripsi}</span>
+                              <span>{merchant.deskripsi.slice(0, 20)}...</span>
                             </div>
                           </div>
                         </div>

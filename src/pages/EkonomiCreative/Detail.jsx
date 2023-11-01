@@ -63,6 +63,7 @@ function DetailEkonomiCreative() {
                         }
                         className="card-img-top"
                         alt=""
+                        style={{ width: 310, height: 310 }}
                       />
                       <h5 className="mt-2">{product.product}</h5>
                       <span>{product.harga}</span>
