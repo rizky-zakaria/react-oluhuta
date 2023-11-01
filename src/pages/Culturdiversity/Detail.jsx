@@ -79,7 +79,7 @@ function DetailCulturdiversity() {
                         className="card-img-top"
                         alt=""
                       />
-                      <a href="">
+                      <a href={"/user/culturdiversity/" + cul.id}>
                         <h5>{cul.judul}</h5>
                       </a>
                     </div>

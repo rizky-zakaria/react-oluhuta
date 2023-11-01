@@ -72,7 +72,7 @@ function Biodiversity() {
                     }}
                   >
                     <div className="news-content">
-                      <a href={"/user/culturdiversity/" + culturdiversity.id}>
+                      <a href={"/user/biodiversity/" + culturdiversity.id}>
                         <h5>{culturdiversity.judul.slice(0, 50)}</h5>
                       </a>
                     </div>
