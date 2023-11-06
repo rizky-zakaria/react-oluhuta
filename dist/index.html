@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/assets/logo192-c386396e.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <link rel="manifest" href="data:application/json;base64,ew0KICAibmFtZSI6ICJPbHVodXRhIEpPVVJORVkiLA0KICAic2hvcnRfbmFtZSI6ICJPbHVodXRhIEpPVVJORVkiLA0KICAiZGVzY3JpcHRpb24iOiAiV2Vic2l0ZSBXaXNhdGEgQmVyYmFzaXMgR0lTIChHZW9ncmFwaGljIEluZm9ybWF0aW9uIFN5c3RlbSkiLA0KICAidGhlbWVfY29sb3IiOiAiIzE5NzZkMiIsDQogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmYWZhZmEiLA0KICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwNCiAgInNjb3BlIjogIi4vIiwNCiAgInN0YXJ0X3VybCI6ICIuLyIsDQogICJpY29ucyI6IFsNCiAgICB7DQogICAgICAic3JjIjogImljb25zL2ljb24tNzJ4NzIucG5nIiwNCiAgICAgICJzaXplcyI6ICI3Mng3MiIsDQogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLA0KICAgICAgInB1cnBvc2UiOiAibWFza2FibGUgYW55Ig0KICAgIH0sDQogICAgew0KICAgICAgInNyYyI6ICJpY29ucy9pY29uLTk2eDk2LnBuZyIsDQogICAgICAic2l6ZXMiOiAiOTZ4OTYiLA0KICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwNCiAgICAgICJwdXJwb3NlIjogIm1hc2thYmxlIGFueSINCiAgICB9LA0KICAgIHsNCiAgICAgICJzcmMiOiAiaWNvbnMvaWNvbi0xMjh4MTI4LnBuZyIsDQogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsDQogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLA0KICAgICAgInB1cnBvc2UiOiAibWFza2FibGUgYW55Ig0KICAgIH0sDQogICAgew0KICAgICAgInNyYyI6ICJpY29ucy9pY29uLTE0NHgxNDQucG5nIiwNCiAgICAgICJzaXplcyI6ICIxNDR4MTQ0IiwNCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsDQogICAgICAicHVycG9zZSI6ICJtYXNrYWJsZSBhbnkiDQogICAgfSwNCiAgICB7DQogICAgICAic3JjIjogImljb25zL2ljb24tMTUyeDE1Mi5wbmciLA0KICAgICAgInNpemVzIjogIjE1MngxNTIiLA0KICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwNCiAgICAgICJwdXJwb3NlIjogIm1hc2thYmxlIGFueSINCiAgICB9LA0KICAgIHsNCiAgICAgICJzcmMiOiAiaWNvbnMvaWNvbi0xOTJ4MTkyLnBuZyIsDQogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsDQogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLA0KICAgICAgInB1cnBvc2UiOiAibWFza2FibGUgYW55Ig0KICAgIH0sDQogICAgew0KICAgICAgInNyYyI6ICJpY29ucy9pY29uLTM4NHgzODQucG5nIiwNCiAgICAgICJzaXplcyI6ICIzODR4Mzg0IiwNCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyIsDQogICAgICAicHVycG9zZSI6ICJtYXNrYWJsZSBhbnkiDQogICAgfSwNCiAgICB7DQogICAgICAic3JjIjogImljb25zL2ljb24tNTEyeDUxMi5wbmciLA0KICAgICAgInNpemVzIjogIjUxMng1MTIiLA0KICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwNCiAgICAgICJwdXJwb3NlIjogIm1hc2thYmxlIGFueSINCiAgICB9DQogIF0NCn0=" />
+    <script type="module" crossorigin src="/assets/index-2175b442.js"></script>
+    <link rel="stylesheet" href="/assets/index-8244b2c8.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('worker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
+    
+  </body>
+</html>
