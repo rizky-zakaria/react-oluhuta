@@ -72,7 +72,7 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
   return (
     <React.Fragment>
       <LayoutWeb>
-        <div style={{ backgroundColor: "#FFF" }}>
+        <div style={{ backgroundColor: "#FFF", overflow: "hidden" }}>
           <div className="container mt-100"></div>
           <Slider />
           <div className="">
@@ -82,7 +82,7 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                   <img
                     src="./assets/img/text-top-menu.png"
                     alt=""
-                    width={"400px"}
+                    width={"350px"}
                     style={{ marginTop: "100px" }}
                   />
                   <div className="card" style={cardHeader}>
