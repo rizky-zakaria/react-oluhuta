@@ -14,6 +14,7 @@ import Api from "../../../api";
 import Cookies from "js-cookie";
 import Slider from "../../../components/web/Slider";
 import "../../../assets/css/style-content.css";
+import PaginationComponent from "../../../components/utilities/Pagination";
 
 function Home() {
   document.title =
@@ -21,6 +22,11 @@ function Home() {
 
   const navigate = useNavigate();
   const [beritas, setBeritas] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(0);
+  const [total, setTotal] = useState(0);
+  const search = "";
+
   const konten = `      Desa Oluhuta adalah sebuah desa yang terletak di Kabupaten Bone Balango, Kecamatan Kabila Bone, Provinsi Gorontalo. Desa ini terdiri dari empat dusun diantaranya Dusun Pantai, Dusun Kampung Baru, Dusun Pemukiman, dan Dusun Huliya,  dengan luas keseluruhannya yakni 1.960 hektar. Wilayah desa Oluhuta didominasi oleh perairan, hutan dan pengunungan, serta perkebunan, oleh sebab itu 52,6 penduduk setempat berprofesi sebagai petani dan 42,8 sebagai nelayan.
 
         Desa Oluhuta terletak berdekatan dengan Desa Botubarani juga Desa Olele yang saoat inl sudah menjadi desa ikonik untuk Provinsi Gorontalo karena potensi wisata bawah laut berupa spesies hiu pous dan terumbu karang yang langka dan cantik. Sama halnya seperti Desa Botubarani dan Olele, potensi dan pesona wisata di Desa Oluhuta tidak kalah menarik. Ada berbagai kekayaan, keunikan geologis, sejarah, serta nilai kebudayaan yang tersimpan di desa yang merupakan cagar budaya ini, antara lain terdapat situs kerangka manusia Oluhuta yang ditemukan sekitar tahun 1994 sampai dengan 2010 silam, ada pula situs lautan terangkat atau biasa dikenal dengan teras terumbu yang terhampar disepanjang pantai Oluhuta dengan aneka rupa yang menambah estetika pantai, serta jajaran Colmunar joint atau kekar kolom dengan bentuk heksagonalnya yang unik yang bisa dijumpai soot memasuki wilayah desa Oluhuta.
@@ -40,13 +46,42 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
 
   const token = Cookies.get("token");
 
-  const fetchData = async () => {
-    await Api.get("/api/client/berita", {
+  // const fetchData = async () => {
+  //   await Api.get("/api/client/berita", {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   }).then((response) => {
+  //     setBeritas(response.data.data);
+  //   });
+  // };
+
+  const fetchData = async (pageNumber, searchData) => {
+    //define variable "page"
+    const page = pageNumber ? pageNumber : currentPage;
+
+    //define variable "searchQuery"
+    const searchQuery = searchData ? searchData : search;
+
+    //fetching data from Rest API
+    await Api.get(`/api/web/berita?q=&page=${page}`, {
       headers: {
+        //header Bearer + Token
         Authorization: `Bearer ${token}`,
       },
     }).then((response) => {
-      setBeritas(response.data.data);
+      //set data response to state "categories"
+      setBeritas(response.data.data.data);
+      console.log(response.data.data.data);
+
+      //set currentPage
+      setCurrentPage(response.data.data.current_page);
+
+      //set perPage
+      setPerPage(response.data.data.per_page);
+
+      //total
+      setTotal(response.data.data.total);
     });
   };
 
@@ -200,7 +235,25 @@ Desa Oluhuta, Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo
                         </div>
                       </Col>
                     ))}
+                    {/* {users.map((user, index) => (
+                      <tr key={index}>
+                        <td className="text-center">
+                          {++index + (currentPage - 1) * perPage}
+                        </td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td className="text-center"></td>
+                      </tr>
+                    ))} */}
                   </Row>
+                  <div className="container mt-1"></div>
+                  <PaginationComponent
+                    currentPage={currentPage}
+                    perPage={perPage}
+                    total={total}
+                    onChange={(pageNumber) => fetchData(pageNumber)}
+                    position="center"
+                  />
                 </center>
               </Col>
             </Row>

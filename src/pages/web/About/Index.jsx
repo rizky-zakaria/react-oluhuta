@@ -49,7 +49,7 @@ function About() {
       <LayoutWeb>
         <div style={{ backgroundColor: "#FFF" }}>
           <div className="container mt-100 mb-5">
-            <Row className="m-5">
+            <Row className="mb-5 mt-5">
               <Col xs={12} lg={12} md={12}>
                 <div className="card">
                   <img src="assets/img/bg-home.png" alt="" width={"100%"} />
